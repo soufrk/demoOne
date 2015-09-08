@@ -9,9 +9,6 @@ public class DictionarySort {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		Integer numberOfStrings = scanner.nextInt();
-		/*List<String> listOfString = new LinkedList<>();
-		listOfString.add("Abcd");
-		listOfString.add("Abc");*/
 		Set<String> setOfStrings = new TreeSet<>();
 		while(numberOfStrings-->0){
 			setOfStrings.add(scanner.next());
