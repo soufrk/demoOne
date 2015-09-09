@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 /**
  * Demonstrates use of meta-character in patterns.
  * [d,s,w,b]
- * @author souvik.goswami
+ * @author soufrk
  *
  */
 public class Pattern001 {
