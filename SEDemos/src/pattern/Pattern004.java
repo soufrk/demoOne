@@ -18,10 +18,15 @@ public class Pattern004 {
 		System.out.println(getResult(input, pattern, 
 				"Search for single character matching between 'i' till 'o'"));
 		
+		pattern = Pattern.compile("[i-o&&[n]]");
+		System.out.println(getResult(input, pattern, 
+				"Search for single character matching between 'i' till 'o'"
+				+ " intersection with 'n'"));
+		
 		pattern = Pattern.compile("[i-o&&[^n]]");
 		System.out.println(getResult(input, pattern, 
 				"Search for single character matching between 'i' till 'o'"
-				+ " excluding 'n'"));
+				+ " subtraction of 'n'"));
 	}
 
 	private static String getResult(String input, Pattern pattern, String desc) {
