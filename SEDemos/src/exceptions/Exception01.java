@@ -3,7 +3,7 @@ package exceptions;
 /**
  * Demonstrates that <code>finally</code>-block will get executed even if there
  * is Exception in <code>catch</code>-block.
- * @author souvik.goswami
+ * @author soufrk
  *
  */
 public class Exception01 {
