@@ -3,7 +3,7 @@ package dates;
 import java.util.Calendar;
 /**
  * Anatomy of a Calendar instance.
- * @author souvik.goswami
+ * @author soufrk
  *
  */
 public class Date002 {
