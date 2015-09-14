@@ -29,7 +29,7 @@ public class DecoratorPattern01 {
 /**
  * Abstract Base class representing the component to be decorated.
  * 
- * @author souvik.goswami
+ * @author soufrk
  *
  */
 abstract class Component {
@@ -47,7 +47,7 @@ abstract class Component {
  * of the component that gets decorated. Decorator HAS-A Component, which gets
  * decorated.
  * 
- * @author souvik.goswami
+ * @author soufrk
  *
  */
 abstract class ComponentDecorator extends Component {
@@ -68,7 +68,7 @@ abstract class ComponentDecorator extends Component {
 /**
  * Concrete implementation of a Component.
  * 
- * @author souvik.goswami
+ * @author soufrk.
  *
  */
 class ComponentA extends Component {
@@ -82,7 +82,7 @@ class ComponentA extends Component {
 /**
  * Concrete implementation of a Component.
  * 
- * @author souvik.goswami
+ * @author soufrk
  *
  */
 class ComponentB extends Component {
@@ -95,7 +95,7 @@ class ComponentB extends Component {
 /**
  * Concrete implementation of a Decorator.
  * 
- * @author souvik.goswami
+ * @author soufrk
  *
  */
 class NowShowing extends ComponentDecorator {
@@ -125,7 +125,7 @@ class NowShowing extends ComponentDecorator {
 /**
  * Concrete implementation of a Decorator.
  * 
- * @author souvik.goswami
+ * @author soufrk
  *
  */
 class ToniteShowing extends ComponentDecorator {
