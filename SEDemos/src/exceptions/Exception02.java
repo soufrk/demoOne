@@ -5,7 +5,7 @@ import java.io.IOException;
 /**
  * Demonstrates that under no circumstance can a base-type exception
  * be declared as thrown while over-riding. Be it Checked/Unchecked.
- * @author souvik.goswami
+ * @author soufrk
  *
  */
 public class Exception02 {
