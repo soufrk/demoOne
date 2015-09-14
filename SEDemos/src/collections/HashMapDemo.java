@@ -29,7 +29,7 @@ import java.util.Set;
 /**
  * Behaviour at hash collision
  * 
- * @author souvik.goswami
+ * @author soufrk
  *
  */
 public class HashMapDemo {
