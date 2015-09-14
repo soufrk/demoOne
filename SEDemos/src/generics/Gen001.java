@@ -6,7 +6,7 @@ package generics;
  * level, or</li>
  * <li>at method level</li>
  * </ul>
- * @author souvik.goswami
+ * @author soufrk
  *
  */
 public class Gen001 {
