@@ -4,6 +4,11 @@ import java.util.Scanner;
 import java.util.Set;
 import java.util.TreeSet;
 
+/**
+ * Implementation of a dictionary like sorting of words ina given String.
+ * @author soufrk
+ *
+ */
 public class DictionarySort {
 
 	public static void main(String[] args) {

@@ -1,5 +1,11 @@
 package algorithms;
 
+/**
+ * Like 2nd-highest, finding second lowest number in a collection in single 
+ * iteration.
+ * @author soufrk
+ *
+ */
 public class SecondLowest {
 
 	public static void main(String[] args) {

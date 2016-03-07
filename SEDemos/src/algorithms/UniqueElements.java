@@ -1,5 +1,10 @@
 package algorithms;
 
+/**
+ * Unimplemented attempt of counting unique elements. Forgot the inspiration.
+ * @author soufrk
+ *
+ */
 public class UniqueElements {
 
 	public static void main(String[] args) {

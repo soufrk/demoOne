@@ -1,5 +1,10 @@
 package algorithms;
 
+/**
+ * Finding second highest number in a collection in single iteration.
+ * @author soufrk
+ *
+ */
 public class SecondHighest {
 	
 	public static void main(String[] args) {
