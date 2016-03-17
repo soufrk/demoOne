@@ -12,8 +12,9 @@ public class InnerClass01 {
 	 * @author souvik.goswami
 	 *
 	 */
-	class Inner1 {
+	class Inner2 {
 	}
+	interface InnerInterface1{};
 
 	public static void main(String[] args) {
 		/**
@@ -22,6 +23,16 @@ public class InnerClass01 {
 		 *
 		 */
 		class Inner2 {}
+		
+		// What's wrong in declaring an interface here ??
+		//interface InnerInterface1{};
+	}
+	
+	public void show(){
+		class Inner2{}
+		
+		// What's wrong in declaring an interface here ??
+		//interface InnerInterface1{};
 	}
 
 }

@@ -41,6 +41,15 @@ public class InnerClass02 {
 		public void show(){
 			System.out.println(Calendar.getInstance().getTime());
 		}
+		
+		//Access modifiers allowed on methods of an Inner class.
+		/*void showA(){}
+		private void showB(){}
+		protected void showC(){}
+		static void showD(){}*/
+		
+		// Can an Inner class have a static-initializer ?? 
+		//static {}
 	}
 
 }
