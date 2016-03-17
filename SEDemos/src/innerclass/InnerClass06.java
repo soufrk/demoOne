@@ -15,8 +15,6 @@ public class InnerClass06 {
 				System.out.println("Hello");
 			}
 			
-			
-			
 		};
 		reference.show();
 	}
