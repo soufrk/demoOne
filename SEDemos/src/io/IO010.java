@@ -4,8 +4,6 @@ import java.io.File;
 import java.util.LinkedList;
 import java.util.Queue;
 
-import threads.Test001;
-
 /**
  * Recursive Directory listing using queue.
  * @author souvik.goswami
@@ -15,10 +13,7 @@ public class IO010 extends Thread{
 
 	private static Queue<String> queueOfDir = new LinkedList<>();
 	
-	public static void main(String[] args) {
-		
-
-	}
+	public static void main(String[] args) {}
 	
 	@Override
 	public void run() {
