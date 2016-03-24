@@ -1,38 +1,55 @@
 package innerclass;
 
+import java.util.Calendar;
+
 /**
- * Simple class to demonstrate access grants of a simple inner class towards
- * fields of outer class.
+ * Demonstrates the instantiation/access on simple inner class from an Outer/Enclosing
+ * class.
  * @author souvik.goswami
  *
  */
 public class InnerClass03 {
-	
-	private int x;
-	protected int y;
-	public int z;
-	int w;
-	
-	public InnerClass03(){
-		w = -1;
-		x = 0;
-		y = 1;
-		z = 2;
-	}
 
+	/*
+	 * Instantiation inside non-static method. Can be done simply.
+	 * As it has an implicit <b>this</b> reference.
+	 */
+	public void show(){
+		//Inner inner  = new Inner();
+		Inner inner  = this.new Inner();
+		inner.show();
+	}
+	
+	/*
+	 * Instantiation inside non-static method. Cannot be done simply.
+	 * As it has an implicit <b>this</b> reference. So, need to create an
+	 * instance of outer class first.
+	 * @param args
+	 */
 	public static void main(String[] args) {
-		InnerClass03 outer = new InnerClass03();
-		InnerClass03.Inner inner = outer.new Inner();
-		inner.showOuterFields();
+		//Inner inner  = new Inner(); /* Instance of Inner class not */ 
+		/* possible without an outer instance. */
+		
+		/*InnerClass02 outer = new InnerClass02();
+		InnerClass02.Inner inner = outer.new Inner();*/
+		
+		/* OR in one-line */
+		//InnerClass02.Inner inner = new InnerClass02().new Inner();
 	}
 	
 	class Inner{
-		public void showOuterFields(){
-			System.out.println("Outer x=" + x);
-			System.out.println("Outer y=" + y);
-			System.out.println("Outer z=" + z);
-			System.out.println("Outer w=" + w);
+		public void show(){
+			System.out.println(Calendar.getInstance().getTime());
 		}
+		
+		//Access modifiers allowed on methods of an Inner class.
+		/*void showA(){}
+		private void showB(){}
+		protected void showC(){}
+		static void showD(){}*/
+		
+		// Can an Inner class have a static-initializer ?? 
+		//static {}
 	}
 
 }

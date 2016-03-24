@@ -1,37 +1,38 @@
 package innerclass;
 
 /**
- * Access scope of various fields in Inner Class design.
- * 
- * @author soufrk
+ * Simple class to demonstrate access grants of a simple inner class for
+ * fields of outer class.
+ * @author souvik.goswami
  *
  */
 public class InnerClass04 {
-
+	
 	private int x;
-
-	public InnerClass04() {
-		x = -1;
-	}
-
-	class Inner {
-		int x;
-
-		public void show() {
-			int x = 1;
-			System.out.println("x = " + x); // access Inner class field
-			System.out.println("this.x = " + this.x); // access method local
-														// field
-			System.out.println("InnerClass04.this.x = " + InnerClass04.this.x); // access
-																				// Outer
-																				// class
-																				// field
-		}
+	protected int y;
+	public int z;
+	int w;
+	
+	public InnerClass04(){
+		w = -1;
+		x = 0;
+		y = 1;
+		z = 2;
 	}
 
 	public static void main(String[] args) {
-		InnerClass04.Inner inner = new InnerClass04().new Inner();
-		inner.show();
+		InnerClass04 outer = new InnerClass04();
+		InnerClass04.Inner inner = outer.new Inner();
+		inner.showOuterFields();
+	}
+	
+	class Inner{
+		public void showOuterFields(){
+			System.out.println("Outer x=" + x);
+			System.out.println("Outer y=" + y);
+			System.out.println("Outer z=" + z);
+			System.out.println("Outer w=" + w);
+		}
 	}
 
 }

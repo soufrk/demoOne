@@ -1,31 +1,33 @@
 package innerclass;
 
 /**
- * Example of method local Inner class and access restriction on local fields.
+ * Access scope of various fields(outer & inner) inside simple inner class.
  * 
  * @author soufrk
  *
  */
 public class InnerClass05 {
 
-	public void show() {
-		int x = 0;
-		final int y = -2; 
-		class Inner {
-			int x = -1; // Comment this line and see the output
+	private int x;
 
-			public void show() {
-				x++;
-				System.out.println(x);
-				System.out.println(y);
-			}
+	public InnerClass05() {
+		x = -1;
+	}
+
+	class Inner {
+		int x;
+
+		public void show() {
+			int x = 1;
+			System.out.println("x = " + x); // access Inner class field
+			System.out.println("this.x = " + this.x); // access method local field
+			System.out.println("InnerClass05.this.x = " + InnerClass05.this.x); // access Outer class field
 		}
-		Inner inner = new Inner();
-		inner.show();
 	}
 
 	public static void main(String[] args) {
-		new InnerClass05().show();
+		InnerClass05.Inner inner = new InnerClass05().new Inner();
+		inner.show();
 	}
 
 }

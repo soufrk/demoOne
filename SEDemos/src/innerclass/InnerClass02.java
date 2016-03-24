@@ -1,55 +1,37 @@
 package innerclass;
 
-import java.util.Calendar;
-
 /**
- * Demonstrates the instantiation/access on Inner class from an Outer/Enclosing
- * class.
+ * So, is it possible to have inner-interfaces same way ??
  * @author souvik.goswami
  *
  */
 public class InnerClass02 {
 
-	/**
-	 * Instantiation inside non-static method. Can be done simply.
-	 * As it has an implicit <b>this</b> reference.
+	/*
+	 * Simple inner interface is possible.
 	 */
-	public void show(){
-		//Inner inner  = new Inner();
-		Inner inner  = this.new Inner();
-		inner.show();
-	}
-	
-	/**
-	 * Instantiation inside non-static method. Cannot be done simply.
-	 * As it has an implicit <b>this</b> reference. So, need to create an
-	 * instance of outer class first.
-	 * @param args
-	 */
+	interface InnerInterface1{};
+
 	public static void main(String[] args) {
-		//Inner inner  = new Inner(); /* Instance of Inner class not */ 
-		/* possible without an outer instance. */
 		
-		/*InnerClass02 outer = new InnerClass02();
-		InnerClass02.Inner inner = outer.new Inner();*/
+		/*
+		 * Can we have method local inner interface ?
+		 * @author souvik.goswami
+		 *
+		 */
+		// interface InnerInterface1{};
 		
-		/* OR in one-line */
-		//InnerClass02.Inner inner = new InnerClass02().new Inner();
+		// What's wrong in declaring an interface here ??
+		
 	}
 	
-	class Inner{
-		public void show(){
-			System.out.println(Calendar.getInstance().getTime());
-		}
+	public void show(){
+		/*
+		 * Can we have interface inside non-static method ?
+		 */
+		// interface InnerInterface1{};
 		
-		//Access modifiers allowed on methods of an Inner class.
-		/*void showA(){}
-		private void showB(){}
-		protected void showC(){}
-		static void showD(){}*/
-		
-		// Can an Inner class have a static-initializer ?? 
-		//static {}
+		// What's wrong in declaring an interface here ??
 	}
 
 }

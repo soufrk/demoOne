@@ -1,28 +1,31 @@
 package innerclass;
 
 /**
- * Demonstration of anonymous Inner class.
+ * Example of method local inner class and access restriction on local fields.
+ * 
  * @author soufrk
  *
  */
 public class InnerClass06 {
 
-	public static void main(String[] args) {
-		MyInterface reference = new MyInterface() {
-			
-			@Override
+	public void show() {
+		int x = 0;
+		final int y = -2; 
+		class Inner {
+			int x = -1; // Comment this line and see the output
+
 			public void show() {
-				System.out.println("Hello");
+				x++;
+				System.out.println(x);
+				System.out.println(y);
 			}
-			
-		};
-		reference.show();
+		}
+		Inner inner = new Inner();
+		inner.show();
 	}
 
-}
+	public static void main(String[] args) {
+		new InnerClass06().show();
+	}
 
-interface MyInterface{
-	final String message = "";
-	void show();
-	//void display();
 }
