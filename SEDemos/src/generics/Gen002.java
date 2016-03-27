@@ -2,7 +2,7 @@ package generics;
 
 /**
  * Declaring a class as generic, with generic method.
- * @author souvik.goswami
+ * @author soufrk
  *
  * @param <E>
  */
