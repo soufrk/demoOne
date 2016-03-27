@@ -2,7 +2,7 @@ package basics;
 
 /**
  * Demonstrates the conversion of integer values casted in byte.
- * @author souvik.goswami
+ * @author soufrk
  *
  */
 public class BytePrimitiveType {

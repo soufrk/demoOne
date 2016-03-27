@@ -2,7 +2,7 @@ package basics;
 
 /**
  * Demonstrates the basics of pass-by-value parameters.
- * @author souvik.goswami
+ * @author soufrk
  *
  */
 public class PassByValue {

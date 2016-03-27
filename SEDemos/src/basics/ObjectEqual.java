@@ -2,7 +2,7 @@ package basics;
 
 /**
  * Demonstrates basic rules for Object reference comparison.
- * @author souvik.goswami
+ * @author soufrk
  *
  */
 public class ObjectEqual {
