@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Type Erasure - when we generalize a generic from a specific
  * type.
- * @author souvik.goswami
+ * @author soufrk
  *
  */
 public class Gen005 {

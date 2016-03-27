@@ -16,7 +16,7 @@ import java.util.List;
  * Let's see Upper Bounded first, where the the type of Parameter
  * is bounded to any subclass of a given class.
  * 
- * @author souvik.goswami
+ * @author soufrk
  *
  */
 public class Gen007 {

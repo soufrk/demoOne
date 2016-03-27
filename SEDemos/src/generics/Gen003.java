@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Different Generic Types with different classes in hierarchy can not
  * exchange references.
- * @author souvik.goswami
+ * @author soufrk
  *
  * @param <E>
  */

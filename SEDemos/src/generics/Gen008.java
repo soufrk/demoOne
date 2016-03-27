@@ -10,7 +10,7 @@ import java.util.List;
  * 
  * Let's see Lower Bounded, where the type of Parameter is 
  * limited to subclass of a particular type. 
- * @author souvik.goswami
+ * @author soufrk
  *
  */
 public class Gen008 {

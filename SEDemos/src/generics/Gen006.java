@@ -7,7 +7,7 @@ import java.util.List;
 
 /**
  * A Generic implementation is not a different class.
- * @author souvik.goswami
+ * @author soufrk
  *
  */
 public class Gen006 {

@@ -5,7 +5,7 @@ import java.util.List;
 
 /**
  * Wildcards - the feature that provides even greater strength. 
- * @author souvik.goswami
+ * @author soufrk
  *
  */
 public class Gen004 {
