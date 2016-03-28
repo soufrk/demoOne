@@ -1,47 +1,31 @@
 package exceptions;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
+/**
+ * Exception class can be declared as thrown from anywhere-I
+ * 
+ * But, checked exception can never be declared in catch unless they are
+ * actually thrown.
+ * 
+ * @author soufrk
+ *
+ */
 public class Exception03 {
 
-}
+	public static void main(String[] args) {
+		/*
+		 * You can declare Exception to be thrown out from
+		 * nowhere.
+		 */
+		/*try {
+		} catch (Exception e) {}*/
+		/*
+		 * But you cannot declare a checked Exception to be
+		 * thrown from nowhere.
+		 */
+		/*}catch (IOException e) {}*/
+		/*}catch (InterruptedExcepion e) {}*/
+	}
 
-class A03{
-	void m1() throws IOException{}
-	void m2() throws FileNotFoundException{}
-	void m3() throws ClassCastException{}
-	void m4() throws NumberFormatException{}
-}
-
-class B03 extends A03{
-	
-	/* Cannot add base-type of any exceptions declared in parent */
-	//void m2() throws IOException{}
-	
-	/* Cannot declare Exception as thrown type */ 
-	/*void m1() throws Exception{}
-	void m2() throws Exception{}
-	void m3() throws Exception{}*/
-	
-	/* Cannot add new checked-exceptions */
-	//void m1() throws ClassNotFoundException{}
-	
-	/* May add declaration of new unchecked-excpetions */
-	//void m1() throws NullPointerException{}
-	//void m4() throws NullPointerException{}
-	
-	/* May choose not to declare checked/unchecked-exceptions
-	 * from parent.*/
-	/* void m1(){}
-	void m4(){}*/
-	
-	/* May add new unchecked-exception declaration.
-	 */
-	/*void m1() throws NullPointerException{}
-	void m2() throws NullPointerException{}
-	void m3() throws NullPointerException{}
-	void m4() throws NullPointerException{}*/
-	
-	
 }
