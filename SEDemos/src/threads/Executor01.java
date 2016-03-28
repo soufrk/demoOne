@@ -5,10 +5,23 @@ import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+/**
+ * Simple demonstration of Executors.
+ * @author soufrk
+ *
+ */
 public class Executor01 {
 
 	public static void main(String[] args) {
+		/* Initializing an executor-service with a Thread-pool type.*/
 		ExecutorService executor = Executors.newFixedThreadPool(5);
+		
+		/* Assigning tasks to executor. */
+		for(int i=0; i<100; i++){
+			executor.submit(new MyTask());
+		}
+		
+		/* Creating a list of tasks to be submitted */
 		//List<Runnable> myTaskList = new ArrayList<>();
 		//Runnable myTask1 = new MyTask();
 		//myTaskList.add(myTask1);
@@ -21,12 +34,8 @@ public class Executor01 {
 		//Runnable myTask5 = new MyTask();
 		//myTaskList.add(myTask5);
 		
-		for(int i=0; i<100; i++){
-			executor.submit(new MyTask());
-		}
-		//executor.
+		/* Shutting executor down */
 		executor.shutdown();
-
 	}
 
 }

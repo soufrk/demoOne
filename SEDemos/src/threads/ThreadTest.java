@@ -13,13 +13,17 @@ public class ThreadTest extends Thread{
 	@Override
 	public void run(){
 		System.out.println("In Run");
-		i+=2;
+		i += 2;
 	}
 
 	@Override
 	public void start(){
 		System.out.println("Start");
-		i+=2;
+		i += 2;
+	}
+	
+	public int showI(){
+		return i;
 	}
 	
 	public static void main(String[] args) {
@@ -27,10 +31,11 @@ public class ThreadTest extends Thread{
 		try {
 			ThreadTest obj = new ThreadTest();
 			obj.start();
-			obj.join();
-			System.out.println(((ThreadTest)obj).i);
-		} catch (InterruptedException e) {
-			
+			//obj.join();
+			//System.out.println(((ThreadTest)obj).i);
+			System.out.println(obj.isAlive());
+			System.out.println(obj.showI());
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
