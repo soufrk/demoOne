@@ -36,8 +36,7 @@ class B03 extends A03{
 	/* void m1(){}
 	void m4(){}*/
 	
-	/* May both declare new unchecked-exception and not 
-	 * declare exceptions from base.
+	/* May add new unchecked-exception declaration.
 	 */
 	/*void m1() throws NullPointerException{}
 	void m2() throws NullPointerException{}
