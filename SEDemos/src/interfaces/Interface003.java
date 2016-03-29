@@ -5,7 +5,8 @@ interface MyInterface {
 }
 
 /**
- * Keyword super is not applicable for Interfaces.
+ * Continuing with last example, keyword super is not applicable for Interfaces,
+ * as there can be no instance on an interface.
  *  
  * @author soufrk
  *
@@ -19,7 +20,10 @@ public class Interface003 implements MyInterface{
 	}
 	public void show(){
 		System.out.println(message);
-		//System.out.println(super.message); //Cannot be since there can be no instance of an interface
+		
+		/* Cannot be since there can be no instance of an interface. */
+		//System.out.println(super.message);
+		
 		System.out.println(MyInterface.message);
 	}
 	

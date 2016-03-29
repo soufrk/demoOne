@@ -1,7 +1,7 @@
 package interfaces;
 
 /**
- * What if same method is obtained from an interface and an Abstract class ??
+ * What if same method is obtained from an interface and an abstract class ??
  * @author soufrk
  *
  */
