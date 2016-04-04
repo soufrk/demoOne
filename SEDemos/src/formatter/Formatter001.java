@@ -5,7 +5,7 @@ import java.util.Formatter;
 import java.util.Locale;
 
 /**
- * Demonstrates date/time based formatting
+ * Demonstrates date/time based formatting.
  * @author soufrk
  *
  */
