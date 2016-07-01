@@ -12,7 +12,7 @@ public class InnerClass03 {
 
 	/*
 	 * Instantiation inside non-static method. Can be done simply.
-	 * As it has an implicit <b>this</b> reference.
+	 * As there is an implicit <b>this</b> reference.
 	 */
 	public void show(){
 		//Inner inner  = new Inner();
@@ -22,7 +22,7 @@ public class InnerClass03 {
 	
 	/*
 	 * Instantiation inside non-static method. Cannot be done simply.
-	 * As it has an implicit <b>this</b> reference. So, need to create an
+	 * As there is no implicit <b>this</b> reference. So, need to create an
 	 * instance of outer class first.
 	 * @param args
 	 */
