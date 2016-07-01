@@ -2,7 +2,7 @@ package innerclass;
 
 /**
  * So, is it possible to have inner-interfaces same way ??
- * @author souvik.goswami
+ * @author soufrk
  *
  */
 public class InnerClass02 {
@@ -16,7 +16,7 @@ public class InnerClass02 {
 		
 		/*
 		 * Can we have method local inner interface ?
-		 * @author souvik.goswami
+		 * @author soufrk
 		 *
 		 */
 		// interface InnerInterface1{};
