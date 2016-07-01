@@ -5,7 +5,7 @@ import java.util.Calendar;
 /**
  * Demonstrates the instantiation/access on simple inner class from an Outer/Enclosing
  * class.
- * @author souvik.goswami
+ * @author soufrk
  *
  */
 public class InnerClass03 {
