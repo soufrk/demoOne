@@ -2,14 +2,14 @@ package innerclass;
 
 /**
  * Various types of inner classes.
- * @author souvik.goswami
+ * @author soufrk
  *
  */
 public class InnerClass01 {
 
 	/*
 	 * Simple inner class.
-	 * @author souvik.goswami
+	 * @author soufrk
 	 *
 	 */
 	class Inner2 {
@@ -21,7 +21,7 @@ public class InnerClass01 {
 	public static void main(String[] args) {
 		/*
 		 * Method local inner class.
-		 * @author souvik.goswami
+		 * @author soufrk
 		 *
 		 */
 		class Inner2 {}
