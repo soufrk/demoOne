@@ -1,9 +1,10 @@
 package innerclass;
 
 /**
- * Simple class to demonstrate access grants of a simple inner class for
- * fields of outer class.
- * @author souvik.goswami
+ * Demonstrates the inner class can access and modify outer class fields from
+ * inner class, just like any other method of class.
+ * 
+ * @author soufrk
  *
  */
 public class InnerClass04 {
@@ -24,14 +25,22 @@ public class InnerClass04 {
 		InnerClass04 outer = new InnerClass04();
 		InnerClass04.Inner inner = outer.new Inner();
 		inner.showOuterFields();
+		inner.changeOuterFields();
 	}
 	
 	class Inner{
 		public void showOuterFields(){
+			System.out.println("Outer w=" + w);
 			System.out.println("Outer x=" + x);
 			System.out.println("Outer y=" + y);
 			System.out.println("Outer z=" + z);
-			System.out.println("Outer w=" + w);
+		}
+		
+		public void changeOuterFields(){
+			System.out.println("Outer w=" + ++w);
+			System.out.println("Outer x=" + ++x);
+			System.out.println("Outer y=" + ++y);
+			System.out.println("Outer z=" + ++z);
 		}
 	}
 
