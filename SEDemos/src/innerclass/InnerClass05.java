@@ -19,8 +19,8 @@ public class InnerClass05 {
 
 		public void show() {
 			int x = 1;
-			System.out.println("x = " + x); // access Inner class field
-			System.out.println("this.x = " + this.x); // access method local field
+			System.out.println("x = " + x); // access method local field
+			System.out.println("this.x = " + this.x); // access Inner class field
 			System.out.println("InnerClass05.this.x = " + InnerClass05.this.x); // access Outer class field
 		}
 	}
