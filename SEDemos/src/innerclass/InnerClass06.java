@@ -1,7 +1,7 @@
 package innerclass;
 
 /**
- * Example of method local inner class and access restriction on local fields.
+ * A method-local inner class cannot access local field of the method.
  * 
  * @author soufrk
  *
