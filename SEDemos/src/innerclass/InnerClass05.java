@@ -1,7 +1,7 @@
 package innerclass;
 
 /**
- * Access scope of various fields(outer & inner) inside simple inner class.
+ * Access of various scoped variable of same name inside simple inner class.
  * 
  * @author soufrk
  *
