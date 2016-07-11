@@ -18,10 +18,14 @@ public class Array03 {
 		Iterator<Object> itr = myList.iterator();
 		while(itr.hasNext())
 			System.out.println(itr.next());
-		// Doesn't really print up the numbers is it ?
+		/* Doesn't really print up the numbers is it ?
+		 * Because the list doesn't contain numbers. 
+		 */
 		
+		/*
+		 * Let's try this one.
+		 */
 		myList = Arrays.asList(1, "A", 3, 4);
-		
 		itr = myList.iterator();
 		while(itr.hasNext())
 			System.out.println(itr.next());
