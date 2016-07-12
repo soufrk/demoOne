@@ -1,4 +1,4 @@
-package ffmpeg;
+package multithread;
 
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
@@ -40,7 +40,7 @@ public class BlockingQueueDemo {
 
 /**
  * Producer class; to be intiated with the BlockingQueue instance.
- * @author pftblr-dev-ubuntu
+ * @author soufrk
  *
  */
 class Producer implements Runnable {
@@ -83,7 +83,7 @@ class Producer implements Runnable {
 
 /**
  * Consumer class; to be initiated with BlockingQueue instance. 
- * @author pftblr-dev-ubuntu
+ * @author soufrk
  *
  */
 class Consumer implements Runnable {
