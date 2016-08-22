@@ -10,12 +10,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Node;
-import org.jsoup.select.Elements;
-
-public class RedMart{
+public class RedMart extends Thread{
 	int array[][];
 	
 	int[][] input = {{50, 201, 129, 947, 185},
@@ -25,6 +20,13 @@ public class RedMart{
 		  	{521, 141, 1003, 1113, 241}
 		  };
 	int length = 5;
+	int curX, curY;
+	
+	public RedMart(int curX, int curY) {
+		super();
+		this.curX = curX;
+		this.curY = curY;
+	}
 
 	/*public static void main(String[] args) {
 		String outPath  = "C:/Users/souvik.goswami/Desktop/RedMart.txt";
@@ -56,10 +58,9 @@ public class RedMart{
 		}
 		
 	}*/
-	
-	
-	int getHighestSurrounding(int x, int y){
-		int vResult, hResult, result;
+
+	void getHighestSurrounding(int x, int y){
+		int vResult =-1, hResult = -1, result = -1;
 		if(x == 0)	
 			hResult = input[x+1][y];
 		else if(x == length) 
@@ -70,12 +71,23 @@ public class RedMart{
 		else if(x == length) 
 			vResult = input[x][y-1];
 		
-		//if(hResult>current)return 1;
-		//if 
-		return result;
-		
+		if(vResult > hResult)
+			result = vResult;
+		if(hResult > vResult)
+			result = hResult;
+		if(vResult <= input[x][y] || hResult <= input[x][y])
+			 result = -1;
+		System.out.println(result);
 	}
 	
+	@Override
+	public void run(){
+		getHighestSurrounding(curX, curY);
+	}
+	
+	public static void main(String args[]){
+		new RedMart(0, 0).start();
+	}
 	
 	class MyPath implements Comparable<MyPath>{
 		private int steps;
@@ -103,7 +115,6 @@ public class RedMart{
 			yAxis.add(y);
 		}
 		
-		//public 
 	}
 
 }
