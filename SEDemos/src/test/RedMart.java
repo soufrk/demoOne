@@ -86,7 +86,8 @@ public class RedMart extends Thread{
 	}
 	
 	public static void main(String args[]){
-		new RedMart(0, 0).start();
+		List<MyPath> listOfPath = new LinkedList<>();
+		RedMart redThread = new RedMart(0, 0).start();
 	}
 	
 	class MyPath implements Comparable<MyPath>{
