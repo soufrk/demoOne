@@ -1,0 +1,1 @@
+Found highest:1499, at X:3, Y:675
