@@ -5,7 +5,6 @@ import java.io.PrintStream;
 import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.TreeSet;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.RecursiveAction;
@@ -17,14 +16,18 @@ public class RedMart {
 	static ConcurrentHashMap<Integer, MyPath> mapOFPaths = null;
 	static final int[][] INPUT;
 	static final int LENGTH;
+	static final int WIDTH;
 	static AtomicInteger MAXCOUNT;
 
 	static {
-		LENGTH = 1000;
 		mapOFPaths = new ConcurrentHashMap<>();
 		mainPool = new ForkJoinPool(10);
-		INPUT = RedMart2.getArray(LENGTH);
 		MAXCOUNT = new AtomicInteger(0);
+		
+		DataReader.readArray();
+		INPUT = DataReader.getArray();
+		LENGTH = DataReader.getLength();
+		WIDTH = DataReader.getBreadth();
 	}
 
 	/*
@@ -36,29 +39,7 @@ public class RedMart {
 	 * static final int[][] INPUT = { {1, 2, 4}, {3, 7, 9}, {5, 6, 8} };
 	 */
 
-	int curX, curY;
-
-	public RedMart() {
-	}
-
-	public RedMart(int curX, int curY) {
-		super();
-		this.curX = curX;
-		this.curY = curY;
-	}
-
-	//ArrayListMain
-	/*public static void main(String args[]) {
-		TreeSet<MyPath> setOfPaths = new TreeSet<>();
-		for (int x = 0; x < 1; x++) {
-			for (int y = 0; y < LENGTH; y++) {
-				System.out.format("\nCurrent Element [%d][%d].\n", x+1, y+1);
-				setOfPaths.add(backTrackLongest(x, y));
-			}
-		}
-		MyPath result = setOfPaths.descendingIterator().next();
-		result.printPath();
-	}*/
+	public RedMart() {}
 	
 	// ConcurrentHashMapMain
 	public static void main(String args[]) {
@@ -68,61 +49,36 @@ public class RedMart {
 			e.printStackTrace();
 		}
 		for (int x = 0; x < LENGTH; x++) {
-			for (int y = 0; y < LENGTH; y++) {
+			for (int y = 0; y < WIDTH; y++) {
 				System.out.format("\nCurrent Element [%d][%d].", x+1, y+1);
 				backTrackLongest(x, y);
 			}
 		}
 		System.out.println("\n");
 		System.out.println(mapOFPaths);
-		//MyPath result = setOfPaths.descendingIterator().next();
-		//result.printPath();
 	}
 	
-	
-	/*public static void main(String args[]) {
-		try {
-			System.setOut(new PrintStream("output.txt"));
-			TreeSet<MyPath> setOfPaths = new TreeSet<>();
-			for (int x = 0; x < LENGTH; x++) {
-					MyPath result = subMain(x);
-			}
-			MyPath result = setOfPaths.descendingIterator().next();
-			result.printPath();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}*/
-	
-	public static MyPath subMain(int x){
+	/*public static MyPath subMain(int x){
 		MyPath result = null;
 		TreeSet<MyPath> setOfPaths = new TreeSet<>();
-		for (int yCounter = 0; yCounter < LENGTH; yCounter++) {
+		for (int yCounter = 0; yCounter < WIDTH; yCounter++) {
 			System.out.format("\nCurrent Element [%d][%d].", x+1, yCounter+1);
 			backTrackLongest(x, yCounter);
 		}
 		result = setOfPaths.descendingIterator().next();
 		return result;
-	}
+	}*/
 	
-
-	//public static MyPath backTrackLongest(int x, int y) {
 	public static void backTrackLongest(int x, int y) {
 		mainPool = new ForkJoinPool(20);
 		RedMart outer = new RedMart();
 		MyPath myPath = outer.new MyPath(x, y);
 		MyPath result = null;
 		try {
-			//System.out.println("Starting Thread Pool");
 			mainPool.invoke(myPath);
-			// System.out.println("Execution Halted !!");
-			// TreeSet<MyPath> setOfPaths = new TreeSet<>(listOfPaths);
-			// System.out.println("Got List of results:" + setOfPaths.size());
-			// result = setOfPaths.descendingIterator().next();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		//return result;
 	}
 	
 	class MyPathSizeComparator implements Comparator<MyPath>{
@@ -242,7 +198,7 @@ public class RedMart {
 				leftElement = -1;
 
 			// if no element to the right
-			if (beginY == LENGTH - 1)
+			if (beginY == WIDTH - 1)
 				rightElement = -1;
 			// else if right has an element higher value
 			else if (INPUT[beginX][beginY + 1] > currElmValue) {
