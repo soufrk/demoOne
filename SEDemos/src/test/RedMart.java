@@ -1,121 +1,328 @@
 package test;
 
-import java.io.FileWriter;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
-import java.nio.file.attribute.FileAttribute;
+import java.io.FileNotFoundException;
+import java.io.PrintStream;
+import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Scanner;
+import java.util.TreeSet;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ForkJoinPool;
+import java.util.concurrent.RecursiveAction;
+import java.util.concurrent.atomic.AtomicInteger;
 
-public class RedMart extends Thread{
+public class RedMart {
 	int array[][];
-	
-	int[][] input = {{50, 201, 129, 947, 185},
-		  	{1038, 732, 394, 550, 425},
-		  	{436, 1245, 1366, 445, 439},
-		  	{1482, 460, 0, 1439, 546},
-		  	{521, 141, 1003, 1113, 241}
-		  };
-	int length = 5;
+	static ForkJoinPool mainPool;
+	static ConcurrentHashMap<Integer, MyPath> mapOFPaths = null;
+	static final int[][] INPUT;
+	static final int LENGTH;
+	static AtomicInteger MAXCOUNT;
+
+	static {
+		LENGTH = 1000;
+		mapOFPaths = new ConcurrentHashMap<>();
+		mainPool = new ForkJoinPool(10);
+		INPUT = RedMart2.getArray(LENGTH);
+		MAXCOUNT = new AtomicInteger(0);
+	}
+
+	/*
+	 * static final int[][] INPUT = { {1, 2, 9, 7, 8}, {3, 7, 9, 4, 5}, {6, 1,
+	 * 6, 5, 3}, {8, 6, 0, 1, 6}, {5, 4, 3, 1, 9} };
+	 */
+
+	/*
+	 * static final int[][] INPUT = { {1, 2, 4}, {3, 7, 9}, {5, 6, 8} };
+	 */
+
 	int curX, curY;
-	
+
+	public RedMart() {
+	}
+
 	public RedMart(int curX, int curY) {
 		super();
 		this.curX = curX;
 		this.curY = curY;
 	}
 
-	/*public static void main(String[] args) {
-		String outPath  = "C:/Users/souvik.goswami/Desktop/RedMart.txt";
-		String path = "C:/Users/souvik.goswami/Desktop/ROUGH2.txt";
-		int xCoord = -1;
-		int yCoord = -1;
-		try(Scanner scanner = new Scanner(Paths.get(path));) {
-			FileWriter writer = new FileWriter(outPath);
-			int x = scanner.nextInt();
-			int y = scanner.nextInt();
-			int max = -1;
-			for(int counterX = 0; counterX<x ; counterX++){
-				for(int counterY = 0; counterY<y; counterY++){
-					int next = scanner.nextInt();
-					writer.write(String.format("%4d ", next));
-					if(next>max){
-						max = next;
-						xCoord = counterX;
-						yCoord = counterY;
-					}
-				}
-				writer.write("\n");
+	//ArrayListMain
+	/*public static void main(String args[]) {
+		TreeSet<MyPath> setOfPaths = new TreeSet<>();
+		for (int x = 0; x < 1; x++) {
+			for (int y = 0; y < LENGTH; y++) {
+				System.out.format("\nCurrent Element [%d][%d].\n", x+1, y+1);
+				setOfPaths.add(backTrackLongest(x, y));
 			}
-			writer.close();
-			System.out.format("Found highest:%d, at X:%d, Y:%d\n", max, xCoord, yCoord);
-			
-		} catch (IOException e) {
+		}
+		MyPath result = setOfPaths.descendingIterator().next();
+		result.printPath();
+	}*/
+	
+	// ConcurrentHashMapMain
+	public static void main(String args[]) {
+		try {
+			System.setOut(new PrintStream("output.txt"));
+		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
-		
+		for (int x = 0; x < LENGTH; x++) {
+			for (int y = 0; y < LENGTH; y++) {
+				System.out.format("\nCurrent Element [%d][%d].", x+1, y+1);
+				backTrackLongest(x, y);
+			}
+		}
+		System.out.println("\n");
+		System.out.println(mapOFPaths);
+		//MyPath result = setOfPaths.descendingIterator().next();
+		//result.printPath();
+	}
+	
+	
+	/*public static void main(String args[]) {
+		try {
+			System.setOut(new PrintStream("output.txt"));
+			TreeSet<MyPath> setOfPaths = new TreeSet<>();
+			for (int x = 0; x < LENGTH; x++) {
+					MyPath result = subMain(x);
+			}
+			MyPath result = setOfPaths.descendingIterator().next();
+			result.printPath();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}*/
+	
+	public static MyPath subMain(int x){
+		MyPath result = null;
+		TreeSet<MyPath> setOfPaths = new TreeSet<>();
+		for (int yCounter = 0; yCounter < LENGTH; yCounter++) {
+			System.out.format("\nCurrent Element [%d][%d].", x+1, yCounter+1);
+			backTrackLongest(x, yCounter);
+		}
+		result = setOfPaths.descendingIterator().next();
+		return result;
+	}
+	
 
-	void getHighestSurrounding(int x, int y){
-		int vResult =-1, hResult = -1, result = -1;
-		if(x == 0)	
-			hResult = input[x+1][y];
-		else if(x == length) 
-			hResult = input[x-1][y];
+	//public static MyPath backTrackLongest(int x, int y) {
+	public static void backTrackLongest(int x, int y) {
+		mainPool = new ForkJoinPool(20);
+		RedMart outer = new RedMart();
+		MyPath myPath = outer.new MyPath(x, y);
+		MyPath result = null;
+		try {
+			//System.out.println("Starting Thread Pool");
+			mainPool.invoke(myPath);
+			// System.out.println("Execution Halted !!");
+			// TreeSet<MyPath> setOfPaths = new TreeSet<>(listOfPaths);
+			// System.out.println("Got List of results:" + setOfPaths.size());
+			// result = setOfPaths.descendingIterator().next();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		//return result;
+	}
+	
+	class MyPathSizeComparator implements Comparator<MyPath>{
+
+		@Override
+		public int compare(MyPath o1, MyPath o2) {
+			return o1.getSteps() - o2.getSteps();
+		}
+	}
+	
+	class MyPathSlopeComparator implements Comparator<MyPath>{
+
+		@Override
+		public int compare(MyPath o1, MyPath o2) {
+			return o1.getSlope() - o2.getSlope();
+		}
 		
-		if(y == 0)	
-			vResult = input[x][y+1];
-		else if(x == length) 
-			vResult = input[x][y-1];
+	}
+
+	class MyPath extends RecursiveAction implements Comparable<MyPath> {
 		
-		if(vResult > hResult)
-			result = vResult;
-		if(hResult > vResult)
-			result = hResult;
-		if(vResult <= input[x][y] || hResult <= input[x][y])
-			 result = -1;
-		System.out.println(result);
-	}
-	
-	@Override
-	public void run(){
-		getHighestSurrounding(curX, curY);
-	}
-	
-	public static void main(String args[]){
-		List<MyPath> listOfPath = new LinkedList<>();
-		RedMart redThread = new RedMart(0, 0).start();
-	}
-	
-	class MyPath implements Comparable<MyPath>{
-		private int steps;
-		private int difference;
+		private int beginX, beginY, currElmValue;
 		private List<Integer> xAxis;
 		private List<Integer> yAxis;
-		
-		public MyPath(){
+
+		public MyPath() {
 			xAxis = new LinkedList<>();
 			yAxis = new LinkedList<>();
+			// System.out.println("New Path Starts !! " +
+			// Thread.currentThread().getName());
 		}
-		
+
+		public MyPath(int beginX, int beginY) {
+			this.beginX = beginX;
+			this.beginY = beginY;
+			this.currElmValue = INPUT[beginX][beginY];
+			xAxis = new LinkedList<>();
+			yAxis = new LinkedList<>();
+			// System.out.println("New Path Starts !! " +
+			// Thread.currentThread().getName());
+			addStep(beginX, beginY);
+			// printPath();
+		}
+
+		public MyPath(int beginX, int beginY, final List<Integer> xAxis, final List<Integer> yAxis) {
+			this.beginX = beginX;
+			this.beginY = beginY;
+			this.currElmValue = INPUT[beginX][beginY];
+			this.xAxis = new LinkedList<>(xAxis);
+			this.yAxis = new LinkedList<>(yAxis);
+			// System.out.println("New Path Starts !! " +
+			// Thread.currentThread().getName());
+			addStep(beginX, beginY);
+			// printPath();
+		}
+
 		@Override
 		public int compareTo(MyPath o) {
-			return this.getDifference() - o.getDifference();
-			
+			// return this.getDifference() - o.getDifference();
+			return this.xAxis.size() - o.xAxis.size();
 		}
-		
-		public int getDifference(){
-			return input[xAxis.get(xAxis.size())][yAxis.get(xAxis.size())]- input[xAxis.get(0)][yAxis.get(0)];
-		}
-		
-		public void addStep(int x,int y){
-			xAxis.add(x); 
+
+		/*
+		 * public int getDifference(){ return
+		 * INPUT[xAxis.get(xAxis.size())][yAxis.get(xAxis.size())]-
+		 * INPUT[xAxis.get(0)][yAxis.get(0)]; }
+		 */
+
+		public void addStep(int x, int y) {
+			xAxis.add(x);
 			yAxis.add(y);
 		}
+
+		@Override
+		protected void compute() {
+			List<RecursiveAction> actions = new LinkedList<>();
+			int topElement = 0, downElement = 0, leftElement = 0, rightElement = 0;
+			// if no element at top
+			if (beginX == 0)
+				// exit topElement = -1
+				topElement = -1;
+			// else if top has an element of higher value
+			else if (INPUT[beginX - 1][beginY] > currElmValue) {
+				// System.out.println("Top Element:" + INPUT[beginX-1][beginY]);
+				// spawn new thread - copy pathStack, new X-coord, new y-Coord
+				actions.add(new MyPath(beginX - 1, beginY, getxAxis(), getyAxis()));
+			} else // else topElement is not greater
+				topElement = -1;
+
+			// if no element at bottom
+			if (beginX == LENGTH - 1)
+				downElement = -1;
+			// else if down has an element higher value
+			else if (INPUT[beginX + 1][beginY] > currElmValue) {
+				// System.out.println("Down Element:" +
+				// INPUT[beginX+1][beginY]);
+				// spawn new thread - copy pathStack, new X-coord, new y-Coord
+				actions.add(new MyPath(beginX + 1, beginY, getxAxis(), getyAxis()));
+			}
+			// else downElement = -1
+			else
+				downElement = -1;
+
+			// if no element to the left
+			if (beginY == 0)
+				leftElement = -1;
+			// else if left has an element of higher value
+			else if (INPUT[beginX][beginY - 1] > currElmValue) {
+				// System.out.println("Left Element:" +
+				// INPUT[beginX][beginY-1]);
+				// spawn new thread - copy pathStack, new X-coord, new y-Coord
+				// System.out.println("Forking new Thread");
+				actions.add(new MyPath(beginX, beginY - 1, getxAxis(), getyAxis()));
+			}
+			// else leftElement = -1
+			else
+				leftElement = -1;
+
+			// if no element to the right
+			if (beginY == LENGTH - 1)
+				rightElement = -1;
+			// else if right has an element higher value
+			else if (INPUT[beginX][beginY + 1] > currElmValue) {
+				// System.out.println("Right Element:" +
+				// INPUT[beginX][beginY+1]);
+				// spawn new thread - copy pathStack, new X-coord, new y-Coord
+				actions.add(new MyPath(beginX, beginY + 1, getxAxis(), getyAxis()));
+			}
+			// else rightElement = -1
+			else
+				rightElement = -1;
+
+			// print PathTrace and Exit
+			if (topElement + downElement + leftElement + rightElement == -4) {
+				// System.out.println("This path has ended !!!" +
+				// Thread.currentThread().getName());
+				// printPath();
+				if(this.getSteps() > MAXCOUNT.get()){
+					MAXCOUNT.set(this.getSteps());
+					mapOFPaths.put(this.getSteps(), this);
+				} else if(mapOFPaths.containsKey(this.getSteps()) && (mapOFPaths.get(this.getSteps())).getSlope()<this.getSlope()){
+					mapOFPaths.put(this.getSteps(), this);
+				}
+			}
+			invokeAll(actions);
+		}
+
+		public void printPath() {
+			/*
+			 * System.out.println("X-axis points Length:" + getxAxis().size());
+			 * System.out.println("Y-axis points Length:" + getyAxis().size());
+			 */
+
+			int listIndex = 0;
+			System.out.format("\n----------------Longest Path----------------\nTotal Steps:%d\n", getxAxis().size());
+			while (listIndex < getxAxis().size()) {
+				System.out.format("[%d] at [%d, %d]\n", INPUT[getxAxis().get(listIndex)][getyAxis().get(listIndex)],
+						getxAxis().get(listIndex)+1, getyAxis().get(listIndex)+1);
+				listIndex++;
+			}
+
+			/*
+			 * System.out.println("X-Axis:" + getxAxis());
+			 * System.out.println("Y-Axis:" + getyAxis());
+			 */
+		}
+
+		public List<Integer> getxAxis() {
+			return xAxis;
+		}
+
+		public List<Integer> getyAxis() {
+			return yAxis;
+		}
 		
+		public int getSteps(){
+			return xAxis.size();
+		}
+		
+		public int getSlope(){
+			int firstX = xAxis.get(0);
+			int firstY = yAxis.get(0);
+			int lastX = xAxis.get(xAxis.size()-1);
+			int lastY = yAxis.get(yAxis.size()-1);
+			return INPUT[lastX][lastY] - INPUT[firstX][firstY];
+		}
+
+		@Override
+		public String toString() {
+			StringBuffer buffer = new StringBuffer();
+			int listIndex = 0;
+			buffer.append(String.format("\n----------------Path----------------\nTotal Steps:%d\n", getxAxis().size()));
+			while (listIndex < getxAxis().size()) {
+				buffer.append(String.format("[%d] at [%d, %d]\n", INPUT[getxAxis().get(listIndex)][getyAxis().get(listIndex)],
+						getxAxis().get(listIndex)+1, getyAxis().get(listIndex)+1));
+				listIndex++;
+			}
+			return buffer.toString();
+		}
+
 	}
 
 }
