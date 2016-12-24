@@ -1,6 +1,7 @@
 package basics;
 
 class TestingClass {
+	
 	public void test(String s) {
 		System.out.println("String");
 	}
