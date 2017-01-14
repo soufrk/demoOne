@@ -11,6 +11,7 @@ package abstractclasses;
  */
 public abstract class AbstractClass03 implements MyInterface03{
 	/*int show(){return 0;}*/
+	void show(int n){}
 
 }
 

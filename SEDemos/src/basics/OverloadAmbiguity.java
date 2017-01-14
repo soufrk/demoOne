@@ -4,9 +4,9 @@ package basics;
  * @author soufrk
  *
  */
-
 // Part 1
 public class OverloadAmbiguity {
+
 	public void test(String s) {
 		System.out.println("String");
 	}
