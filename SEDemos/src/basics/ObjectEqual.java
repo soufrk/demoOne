@@ -9,8 +9,7 @@ public class ObjectEqual {
 
 	public static void main(String[] args) {
 		int result = 0;
-		ObjectEqual oc = new ObjectEqual();
-		//Object oc = new Object();
+		Object oc = new Object();
         Object o = oc;
 
         if (o == oc)  
