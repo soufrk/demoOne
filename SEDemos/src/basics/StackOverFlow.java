@@ -1,5 +1,10 @@
 package basics;
 
+/**
+ * Such a harmless piece of code.
+ * @author soufrk
+ *
+ */
 public class StackOverFlow {
 
 	public static void main(String[] args) {
@@ -12,6 +17,5 @@ public class StackOverFlow {
 
 class Test{
 	String str;
-	//static Test t = new Test();
 	Test t = new Test();
 }
