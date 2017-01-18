@@ -1,5 +1,10 @@
 package exceptions;
 
+/**
+ * To observe the stack-trace info.
+ * @author soufrk
+ *
+ */
 public class Exception02 extends Exception{
 	
 	public Exception02(String message){
