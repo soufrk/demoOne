@@ -22,36 +22,36 @@ class A03{
 class B03 extends A03{
 	
 	/* Cannot add base-type of any exceptions declared in parent */
-	void m2() throws IOException{}
+	/*void m2() throws IOException{}*/
 	
 	/* Cannot declare Throwable/Exception as thrown type */ 
-	void m1() throws Exception{}
+	/*void m1() throws Exception{}
 	void m2() throws Exception{}
-	void m3() throws Exception{}
+	void m3() throws Exception{}*/
 	
-	void m1() throws Throwable{}
+	/*void m1() throws Throwable{}
 	void m2() throws Throwable{}
 	void m3() throws Throwable{}
-	void m4() throws Throwable{}
+	void m4() throws Throwable{}*/
 	
 	/* Cannot add new checked-exceptions */
-	void m1() throws ClassNotFoundException{}
+	/*void m1() throws ClassNotFoundException{}*/
 	
 	/* May add declaration of new unchecked-excpetions */
-	void m1() throws NullPointerException{}
-	void m4() throws NullPointerException{}
+	/*void m1() throws NullPointerException{}
+	void m4() throws NullPointerException{}*/
 	
 	/* May choose not to declare checked/unchecked-exceptions
 	 * from parent.*/
-	void m1(){}
-	void m4(){}
+	/*void m1(){}
+	void m4(){}*/
 	
 	/* May both declare new unchecked-exception and not 
 	 * declare exceptions from base.
 	 */
-	void m1() throws NullPointerException{}
+	/*void m1() throws NullPointerException{}
 	void m2() throws NullPointerException{}
 	void m3() throws NullPointerException{}
-	void m4() throws NullPointerException{}
+	void m4() throws NullPointerException{}*/
 	
 }
