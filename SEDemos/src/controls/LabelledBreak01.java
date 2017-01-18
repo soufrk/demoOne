@@ -1,5 +1,10 @@
 package controls;
 
+/**
+ * Basic example of labelled break statement.
+ * @author soufrk
+ *
+ */
 public class LabelledBreak01 {
 
 	public static void main(String[] args) {
