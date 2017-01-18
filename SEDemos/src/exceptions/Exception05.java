@@ -3,8 +3,8 @@ package exceptions;
 import java.io.IOException;
 
 /**
- * Exception class is an unchecked-exception in itself, as of JDK 7 when used in
- * catch block.
+ * Exception class is an unchecked-exception when declared in catch,
+ * but checked when extended, as of JDK 7.
  * 
  * @author souvik.goswami
  *
@@ -24,14 +24,11 @@ public class Exception05 {
 		 */
 		catch (Exception e) {}
 		/*
-		 * Furthermore,
+		 * Again, if Exception class is extended it does not result into unchecked
+		 * exception.
 		 */
-		try {
-			methodA();
-			methodB();
-		} catch (IOException e) {}
-		  catch (Exception e) {
-		}
+		methodA();
+		methodB();
 
 	}
 
