@@ -38,7 +38,7 @@ public class MultiThread01 implements Runnable{
 				if(temp.isFile()){
 					String output = String.format("\n%-10s prints path - %20s", Thread.currentThread().getName(), temp.getAbsolutePath());
 					//FILE_PATHS.add(output);
-					output += "\nMAX_COUNT=" + MAX_COUNT;
+					//output += "\nMAX_COUNT=" + MAX_COUNT;
 					System.out.print(output);
 				}
 				else if(temp.isDirectory()){
@@ -59,7 +59,7 @@ public class MultiThread01 implements Runnable{
 	 * Hence this method runs possibility of STALE DATA.
 	 */
 	private static void incrementCounter(){
-		System.out.format("\n\t\t%-10s INCREMENTS COUNTER AT - %02d", Thread.currentThread().getName(), COUNTER);
+		//System.out.format("\n\t\t%-10s INCREMENTS COUNTER AT - %02d", Thread.currentThread().getName(), COUNTER);
 		COUNTER++;
 		MAX_COUNT++;
 		//if(COUNTER > MAX_COUNT)
@@ -73,18 +73,45 @@ public class MultiThread01 implements Runnable{
 	 * Hence this method runs possibility of STALE DATA.
 	 */
 	private static void decrementCounter(){
-		System.out.format("\n\t\t%-10s DECREMENTS COUNTER AT - %02d", Thread.currentThread().getName(), COUNTER);
+		//System.out.format("\n\t\t%-10s DECREMENTS COUNTER AT - %02d", Thread.currentThread().getName(), COUNTER);
 		COUNTER--;
 	}
 
-	public static void main(String[] args) throws IOException {
-		String path = "C:/Users/souvik.goswami/git/demoOne/SEDemos";
+	public static void main1(String[] args) throws IOException {
+		//String path = "C:/Users/souvik.goswami/git/demoOne/SEDemos";
+		String path = "C:/WORK";
+		//String path = "C:/";
 		PrintStream out = new PrintStream("output1.txt");
 		System.setOut(out);
 		Thread t = new Thread(new MultiThread01(path));
 		t.start();
 		while(t.isAlive()){}
-		System.out.println("\nMAIN THREAD EXITS with count=" + COUNTER);
+		//System.out.println("\nMAIN THREAD EXITS with count=" + COUNTER);
+		/*while(COUNTER != 0){}
+		System.out.println("Max Count" + MAX_COUNT);*/
+		/*for(int i=0;i<10;i++){
+			System.out.println("\nCount=" + COUNTER);
+			System.out.println("Max Count" + MAX_COUNT);
+		}*/
+	}
+	
+	public static void main(String[] args) throws IOException {
+		//String path = "C:/Users/souvik.goswami/git/demoOne/SEDemos";
+		//String path = "C:/";
+		PrintStream out = new PrintStream("output1.txt");
+		System.setOut(out);
+		Thread t = new Thread(new MultiThread01("C:/WORK"));
+		t.start();
+		while(t.isAlive()){}
+		
+		t = new Thread(new MultiThread01("C:/Users/souvik.goswami/git"));
+		t.start();
+		while(t.isAlive()){}
+		
+		t = new Thread(new MultiThread01("C:/theMediaFolder"));
+		t.start();
+		while(t.isAlive()){}
+		//System.out.println("\nMAIN THREAD EXITS with count=" + COUNTER);
 		/*while(COUNTER != 0){}
 		System.out.println("Max Count" + MAX_COUNT);*/
 		/*for(int i=0;i<10;i++){
