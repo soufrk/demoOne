@@ -7,7 +7,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 /**
- * Use of blob strings in DirectoryStream to list files with a particular extension. 
+ * Use of glob strings in DirectoryStream to list files with a particular extension. 
  * @author soufrk
  *
  */
