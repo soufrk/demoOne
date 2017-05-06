@@ -24,7 +24,13 @@ public class DirStream {
 		//try(DirectoryStream<Path> myStream = Files.newDirectoryStream(path.toAbsolutePath(), "*.java,*.txt")){
 		
 		/* Multiple extensions */
-		try(DirectoryStream<Path> myStream = Files.newDirectoryStream(path.toAbsolutePath(), "*.{java,txt}")){
+		//try(DirectoryStream<Path> myStream = Files.newDirectoryStream(path.toAbsolutePath(), "*.{java,txt}")){
+		
+		/* Name matching pattern */
+		//try(DirectoryStream<Path> myStream = Files.newDirectoryStream(path.toAbsolutePath(), "intel*.txt")){
+		
+		/* Name and extension match. */
+		try(DirectoryStream<Path> myStream = Files.newDirectoryStream(path.toAbsolutePath(), "intel*.txt")){
 			for(Path myPath:myStream)
 				System.out.println(myPath);
 		}catch(IOException e){
