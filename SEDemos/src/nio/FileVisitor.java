@@ -14,7 +14,7 @@ import java.nio.file.attribute.BasicFileAttributes;
  * <li>Alphabetical order of file visit.</li>
  * <li>Folder depth visit first.</li>
  * </ul>
- * @author souvik.goswami
+ * @author soufrk
  *
  */
 public class FileVisitor extends SimpleFileVisitor<Path> {
