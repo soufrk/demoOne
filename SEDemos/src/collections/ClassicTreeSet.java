@@ -5,7 +5,7 @@ import java.util.TreeSet;
 
 /**
  * What do you think should be the output ?
- * @author souvik.goswami
+ * @author soufrk
  *
  */
 public class ClassicTreeSet {
