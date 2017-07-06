@@ -5,7 +5,7 @@ package innerclass;
  * @author soufrk
  *
  */
-public class InnerClass01 {
+public class InnerClassFlavours {
 
 	/*
 	 * Simple inner class.
