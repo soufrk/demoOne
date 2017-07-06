@@ -5,7 +5,7 @@ package innerclass;
  * @author soufrk
  *
  */
-public class InnerClass02 {
+public class PossibleInnerInterface {
 
 	/*
 	 * Simple inner interface is possible.
@@ -19,7 +19,7 @@ public class InnerClass02 {
 		 * @author soufrk
 		 *
 		 */
-		// interface InnerInterface1{};
+		interface InnerInterface1{};
 		
 		// What's wrong in declaring an interface here ??
 		
@@ -29,7 +29,7 @@ public class InnerClass02 {
 		/*
 		 * Can we have interface inside non-static method ?
 		 */
-		// interface InnerInterface1{};
+		interface InnerInterface1{};
 		
 		// What's wrong in declaring an interface here ??
 	}
