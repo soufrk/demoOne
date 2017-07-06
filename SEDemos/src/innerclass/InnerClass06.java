@@ -12,10 +12,9 @@ public class InnerClass06 {
 		int x = 0;
 		final int y = -2; 
 		class Inner {
-			int x = -1; // Comment this line and see the output
-
+			int x = -1; // Comment this line and see the output.
 			public void show() {
-				x++;
+				x++; // With previous line commented, difference between Java 7 & 8. 
 				System.out.println(x);
 				System.out.println(y);
 			}
