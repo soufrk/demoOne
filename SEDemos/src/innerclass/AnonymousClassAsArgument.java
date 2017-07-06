@@ -5,7 +5,7 @@ package innerclass;
  * @author soufrk
  *
  */
-public class InnerClass11 {
+public class AnonymousClassAsArgument {
 
 	public static void main(String[] args) {
 		display(new MyInterface11() {
