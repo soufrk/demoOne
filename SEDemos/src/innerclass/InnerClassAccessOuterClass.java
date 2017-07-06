@@ -6,7 +6,7 @@ package innerclass;
  * @author soufrk
  *
  */
-public class InnerClass05 {
+public class InnerClassAccessOuterClass {
 
 	private int x;
 
