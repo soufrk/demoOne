@@ -8,7 +8,7 @@ import java.util.Calendar;
  * @author soufrk
  *
  */
-public class InnerClass03 {
+public class InnerClassInstantiation {
 
 	/*
 	 * Instantiation inside non-static method. Can be done simply.
