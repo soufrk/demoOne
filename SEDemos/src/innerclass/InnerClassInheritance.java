@@ -9,18 +9,18 @@ package innerclass;
  * @author soufrk
  *
  */
-public class InnerClass10 {
+public class InnerClassInheritance {
 
 	public static void main(String[] args) {
-		/*MyInner10 referenceA = new MyInner10(){
+		MyInner10 referenceA = new MyInner10(){
 			@Override
 			public void show() {
 				System.out.println("Anonymous subclass of MyInner10 implements MyInterface10.");
 			}
 		};
-		referenceA.show();*/
+		referenceA.show();
 		
-		/*MyInnerAbstract10 referenceB = new MyInnerAbstract10() {
+		MyInnerAbstract10 referenceB = new MyInnerAbstract10() {
 			@Override
 			void show() {
 				System.out.println("Anonymous subclass of MyInnerAbstract10 shows.");
@@ -32,13 +32,13 @@ public class InnerClass10 {
 			}
 		};
 		referenceB.show();
-		referenceB.display();*/
+		referenceB.display();
 		
 		MyInnerAbstractClass10 referenceC = new MyInnerAbstractClass10() {
-			/*@Override
+			@Override
 			public void show() {
 				System.out.println("Anonymous subclass of MyInnerAbstractClass10 might show.");
-			}*/
+			}
 			@Override
 			void print() {
 				System.out.println("Anonymous subclass of MyInnerAbstractClass10 has to print.");
