@@ -7,7 +7,7 @@ package innerclass;
  * @author soufrk
  *
  */
-public class InnerClass04 {
+public class InnerClassModifyOuterClassFields {
 	
 	private int x;
 	protected int y;
