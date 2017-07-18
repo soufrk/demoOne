@@ -6,7 +6,7 @@ package strings;
  * @author soufrk
  *
  */
-public class String003 {
+public class StringSwitchCase {
 	public static void main(String[] args) {
 		//String test = "A";
 		String test = "B";
