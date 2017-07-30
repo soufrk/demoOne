@@ -1,0 +1,9 @@
+Objective - Replicate a scrolling log like prgram.
+Assumption - 
+            1. File is always appended, contents never removed.
+            2. File and containing directory is never deleted.
+            3. Single file under consideration.
+Breakdown - 
+            1. Program to read file continuously, while being appended externally.
+            2. Combine with a simple FileWatcher to read post any changes made to file.
+            3. Scrolling output feature.
