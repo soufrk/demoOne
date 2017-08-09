@@ -4,11 +4,8 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Demonstrates the use of toArray method of List.
- * 
- * Typical use of this method is found in ArrayList class constructor wherein an
- * existing Collection is taken as reference. The constructor gets the an array
- * out of the collection, and then copies it into another array of Object type.
+ * Given that something is going to blow up !!
+ * Predicting what, will really be tough.
  * 
  * @author soufrk
  *
@@ -20,6 +17,7 @@ public class TheToArrayMethod {
 	myList.add(10);
 	myList.add(20);
 	myList.add(30);
+	    
 	Object[] objArray = new Object[5];
 	String[] strArray = new String[5];
 	Object[] objStr = new String[5];
