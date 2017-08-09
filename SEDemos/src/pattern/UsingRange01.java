@@ -9,7 +9,7 @@ import java.util.regex.Pattern;
  * @author soufrk
  *
  */
-public class UsingBoundary {
+public class UsingRange01 {
 
     public static void main(String[] args) {
 	String[] input = { "a aa ab abc aab abb abc.", "abdc agfa cdab.", "abcd ABCD AbcD aBcD.",
