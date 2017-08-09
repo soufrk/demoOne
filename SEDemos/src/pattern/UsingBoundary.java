@@ -6,10 +6,10 @@ import java.util.regex.Pattern;
 /**
  * Demonstrates use of ranges of pattern using [].
  * 
- * @author soufrk.
+ * @author soufrk
  *
  */
-public class Pattern002 {
+public class UsingBoundary {
 
   public static void main(String[] args) {
 
