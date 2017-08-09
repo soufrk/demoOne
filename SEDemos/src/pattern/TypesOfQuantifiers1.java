@@ -26,7 +26,6 @@ public class TypesOfQuantifiers1 {
 	System.out.println(getResult(input0, Pattern.compile("a+?"), "Possessive search for 1 or none 'a'"));
 	System.out.println(getResult(input1, Pattern.compile("a+"), "Search for sequence with 1 or none 'a' (Either sigle or none)."));
 	System.out.println(getResult(input1, Pattern.compile("a+?"), "Possessive search for 1 or none 'a'"));
-
     }
 
     private static String getResult(String input, Pattern pattern, String desc) {
