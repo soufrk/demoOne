@@ -13,6 +13,7 @@ public class MetaCharacterBasics1 {
 
     public static void main(String[] args) {
 	String input = "The number was 007.";
+	    
 	Pattern patternD = Pattern.compile("\\d");
 	Matcher matcherD = patternD.matcher(input);
 	String outputD = "Integers at:[";
