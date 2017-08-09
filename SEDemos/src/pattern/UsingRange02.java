@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 
 /**
  * Demonstrates the essence of range operation - []
- * @author souvik.goswami
+ * @author soufrk
  *
  */
 public class UsingRange02 {
