@@ -9,7 +9,7 @@ import java.util.regex.Pattern;
  * @author soufrk
  *
  */
-public class Pattern001 {
+public class MetaCharacterBasics1 {
 
 	public static void main(String[] args) {
 		String input = "The number was 007.";
