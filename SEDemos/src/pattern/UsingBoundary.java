@@ -12,7 +12,6 @@ import java.util.regex.Pattern;
 public class UsingBoundary {
 
     public static void main(String[] args) {
-
 	String[] input = { "a aa ab abc aab abb abc.", "abdc agfa cdab.", "abcd ABCD AbcD aBcD.",
 		"abcd012 ABCD123 AbcD234 aBcD345." };
 	Pattern[] patterns = { Pattern.compile("[a,b]"), Pattern.compile("[ab]"), Pattern.compile("[a-c]"),
