@@ -12,8 +12,8 @@ import java.util.Map;
 public class IndexedUniqueElementFinder {
 
     public static void main(String[] args) {
-	String inputs[] = {"aabcd", "abcedb"};
-	for(String input:inputs)
+	String inputs[] = { "aabcd", "abcedb" };
+	for (String input : inputs)
 	    method1(input);
     }
 
