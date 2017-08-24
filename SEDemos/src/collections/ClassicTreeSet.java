@@ -10,21 +10,18 @@ import java.util.TreeSet;
  */
 public class ClassicTreeSet {
 
-	public static void main(String[] args) {
-		Set<MyClass> mySet = new TreeSet<>();
-		
-		MyClass a = new MyClass();
-		MyClass b = new MyClass();
-		
-		mySet.add(a);
-		mySet.add(b);
-		
-		System.out.println(mySet.iterator().next());
-	}
+    public static void main(String[] args) {
+	Set<MyClass> mySet = new TreeSet<>();
+	MyClass a = new MyClass();
+	MyClass b = new MyClass();
+	mySet.add(a);
+	mySet.add(b);
+	System.out.println(mySet.iterator().next());
+    }
 
 }
 
-class MyClass{
-	int id;
-	String name;
+class MyClass {
+    int id;
+    String name;
 }
