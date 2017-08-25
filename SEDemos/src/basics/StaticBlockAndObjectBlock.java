@@ -8,21 +8,21 @@ package basics;
  */
 public class StaticBlockAndObjectBlock {
 
-  static {
-    System.out.println("Static");
-  }
+    static {
+	System.out.println("Static");
+    }
 
-  {
-    System.out.println("Object");
-  }
+    {
+	System.out.println("Object");
+    }
 
-  public StaticBlockAndObjectBlock() {
-    System.out.println("Constructor");
-  }
+    public StaticBlockAndObjectBlock() {
+	System.out.println("Constructor");
+    }
 
-  public static void main(String[] args) {
-    new StaticBlockAndObjectBlock();
-    new StaticBlockAndObjectBlock();
-  }
+    public static void main(String[] args) {
+	new StaticBlockAndObjectBlock();
+	new StaticBlockAndObjectBlock();
+    }
 
 }

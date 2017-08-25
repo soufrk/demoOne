@@ -1,15 +1,17 @@
 package basics;
 
 /**
- * Firstly, methods with different return types are never overloaded methods.
+ * Methods with different return types are never overloaded methods.
  * 
  * @author soufrk
  *
  */
 public class OverloadBasics {
 
-	void show() {}
+    void show() {
+    }
 
-	int show() {}
+    int show() {
+    }
 
 }
