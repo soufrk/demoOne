@@ -1,4 +1,4 @@
-package basics;
+package basics.datatypes;
 
 /**
  * Demonstrates the conversion of integer values casted in byte.

@@ -1,4 +1,4 @@
-package basics;
+package basics.datatypes;
 
 /**
  * Watch how Wrapper type get casted and guess the answer. Specially a

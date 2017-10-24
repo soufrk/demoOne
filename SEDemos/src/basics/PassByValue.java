@@ -10,23 +10,26 @@ public class PassByValue {
 
     public static void main(String[] args) {
 	int i = 5;
-	new PassByValue().change(i);
-	System.out.println(i);
+	PassByValue instance = new PassByValue();
+	instance.change(i);
+	System.out.println("i=" + i);
 
 	Integer t = 5;
-	new PassByValue().change(t);
+	instance.change(t);
 	// t++;
 	System.out.println("t=" + t);
     }
 
     private void change(int t) {
-	System.out.println("int");
+	System.out.println("Change int");
 	t++;
+	System.out.println("Value in method agr=" + t);
     }
 
     private void change(Integer t) {
-	System.out.println("t=" + t);
+	System.out.println("Change Integer");
 	t++;
+	System.out.println("Value in method arg=" + t);
     }
 
 }
