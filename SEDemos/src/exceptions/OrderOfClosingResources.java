@@ -1,7 +1,5 @@
 package exceptions;
 
-import java.io.IOException;
-
 /**
  * Which order do resources in try-with-resource block get closed ?
  * 
