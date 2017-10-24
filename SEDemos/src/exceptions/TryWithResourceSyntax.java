@@ -8,7 +8,7 @@ import java.util.Scanner;
  * @author soufrk
  *
  */
-public class Exception21 {
+public class TryWithResourceSyntax {
 
     public static void main(String[] args) {
 	try (Scanner a = new Scanner(System.in);

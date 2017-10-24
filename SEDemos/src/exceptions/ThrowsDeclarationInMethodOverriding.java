@@ -9,7 +9,7 @@ import java.io.IOException;
  * @author soufrk
  *
  */
-public class Exception03 {
+public class ThrowsDeclarationInMethodOverriding {
 
 }
 

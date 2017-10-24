@@ -8,7 +8,7 @@ import java.io.IOException;
  * @author soufrk
  *
  */
-public class Exception06 {
+public class ReassignmentOfCatchVariable {
 
     public static void main1(String[] args) throws Exception {
 	try {
@@ -24,6 +24,7 @@ public class Exception06 {
 	    throw new IOException();
 	} catch (IOException e) {
 	    e = new IOException();
+	    e = new NullPointerException();
 	    throw e;
 	}
     }

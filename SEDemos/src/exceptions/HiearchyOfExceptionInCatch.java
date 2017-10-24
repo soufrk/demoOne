@@ -6,7 +6,7 @@ package exceptions;
  * @author soufrk
  *
  */
-public class Exception08 {
+public class HiearchyOfExceptionInCatch {
 
     public static void main(String[] args) {
 	try {

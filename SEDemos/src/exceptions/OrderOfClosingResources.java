@@ -12,7 +12,7 @@ import java.io.IOException;
  * @author soufrk
  *
  */
-public class Exception20 {
+public class OrderOfClosingResources {
 
     public static void main(String[] args) {
 	try (MyClass01 a = new MyClass01(); MyClass02 b = new MyClass02(); MyClass03 c = new MyClass03()) {

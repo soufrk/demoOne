@@ -6,9 +6,9 @@ package exceptions;
  * @author soufrk
  *
  */
-public class Exception02 extends Exception {
+public class StackTraceOfCustomException extends Exception {
 
-    public Exception02(String message) {
+    public StackTraceOfCustomException(String message) {
 	super(message);
     }
 
@@ -17,7 +17,7 @@ public class Exception02 extends Exception {
 
     }
 
-    public static class MyException extends Exception02 {
+    public static class MyException extends StackTraceOfCustomException {
 	public MyException() {
 	    super("Ooo111oo");
 	}

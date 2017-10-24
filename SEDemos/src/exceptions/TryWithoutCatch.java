@@ -8,7 +8,7 @@ import java.io.IOException;
  * @author soufrk
  *
  */
-public class Exception01 {
+public class TryWithoutCatch {
 
     public static void main1(String[] args) {
 	try {

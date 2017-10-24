@@ -13,7 +13,7 @@ import java.util.List;
  * @author soufrk
  *
  */
-public class Exception07 {
+public class IndexVsArrayIndexOutOfBounds {
 
     public static void main1(String[] args) {
 	int[] myArr = new int[2];

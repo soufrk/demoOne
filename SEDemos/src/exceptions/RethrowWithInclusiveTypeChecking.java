@@ -8,7 +8,7 @@ import java.io.IOException;
  * @author soufrk
  *
  */
-public class Exception04 {
+public class RethrowWithInclusiveTypeChecking {
 
     public void method() throws Exception {
 	try {

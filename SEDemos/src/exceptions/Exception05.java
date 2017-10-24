@@ -13,7 +13,10 @@ public class Exception05 {
 
     public static void main(String[] args) {
 
-	try {}
+	try {
+	    methodB();
+	    methodC();
+	}
 	/*
 	 * You cannot declare a checked Exception to be thrown from nowhere.
 	 */
@@ -27,8 +30,6 @@ public class Exception05 {
 	 * Again, if Exception class is extended it does not result into
 	 * unchecked exception.
 	 */
-	methodA();
-	methodB();
 
     }
 
