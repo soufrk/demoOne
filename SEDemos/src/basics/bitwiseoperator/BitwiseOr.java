@@ -51,7 +51,11 @@ public class BitwiseOr {
 	System.out.println("i="+ i + " (Binary:" + Integer.toBinaryString(i) + ")");
 	System.out.println("j="+ j + " (Binary:" + Integer.toBinaryString(j) + ")");
 	int result = i|j;
+<<<<<<< HEAD
 	System.out.println("i|j=" + result + " (Binary:" + Integer.toBinaryString(result) + ")\n");
+=======
+	System.out.println("i&j=" + result + " (Binary:" + Integer.toBinaryString(result) + ")\n");
+>>>>>>> branch 'master' of https://github.com/soufrk/demoOne.git
     }
 
 }
