@@ -1,4 +1,4 @@
-package basics;
+package basics.classdesign;
 
 /**
  * Methods to watch out for while down-casting.

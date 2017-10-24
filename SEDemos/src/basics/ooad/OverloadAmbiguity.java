@@ -1,4 +1,4 @@
-package basics;
+package basics.ooad;
 
 /**
  * Overload ambiguity - passing null as argument.

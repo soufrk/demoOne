@@ -1,4 +1,4 @@
-package basics;
+package basics.ooad;
 
 /**
  * What if one day you decide to experiment with static fields and methods in

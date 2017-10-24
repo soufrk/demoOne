@@ -1,4 +1,4 @@
-package basics;
+package basics.classdesign;
 
 /**
  * Sequence of invocation of an init-block, constructor
