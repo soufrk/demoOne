@@ -3,52 +3,50 @@ package exceptions;
 import java.io.IOException;
 
 /**
- * Which order do resources in try-with-resource block
- * get closed ?
- * If closing one resource encounters problem, do others
- * get closed ?
+ * Which order do resources in try-with-resource block get closed ?
+ * 
+ * If closing one resource encounters problem, do others get closed ?
+ * 
  * try-with-resources
+ * 
  * @author soufrk
  *
  */
 public class Exception20 {
 
-	public static void main(String[] args) {
-		try(MyClass01 a = new MyClass01();
-				MyClass02 b = new MyClass02();
-				MyClass03 c = new MyClass03()){
-		}
+    public static void main(String[] args) {
+	try (MyClass01 a = new MyClass01(); MyClass02 b = new MyClass02(); MyClass03 c = new MyClass03()) {
 	}
-	
-	public static void main(String[] args) {
-		try(MyClass03 c = new MyClass03();MyClass01 a = new MyClass01();
-				){
-			throw new IllegalArgumentException();
-		}
+    }
+
+    public static void main2(String[] args) {
+	try (MyClass03 c = new MyClass03(); MyClass01 a = new MyClass01();) {
+	    throw new IllegalArgumentException();
 	}
+    }
 
 }
 
-class MyClass01 implements AutoCloseable{
+class MyClass01 implements AutoCloseable {
 
-	@Override
-	public void close() throws NullPointerException {
-		System.out.println("Closing A");
-	}
+    @Override
+    public void close() throws NullPointerException {
+	System.out.println("Closing A");
+    }
 }
 
-class MyClass02 implements AutoCloseable{
+class MyClass02 implements AutoCloseable {
 
-	@Override
-	public void close() throws NullPointerException {
-		System.out.println("Closing B");
-	}
+    @Override
+    public void close() throws NullPointerException {
+	System.out.println("Closing B");
+    }
 }
 
-class MyClass03 implements AutoCloseable{
+class MyClass03 implements AutoCloseable {
 
-	@Override
-	public void close() throws NullPointerException {
-		throw new NullPointerException();
-	}
+    @Override
+    public void close() throws NullPointerException {
+	throw new NullPointerException();
+    }
 }
