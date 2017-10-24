@@ -1,4 +1,4 @@
-package basics;
+package basics.classdesign;
 
 /**
  * What is a static block and an object block ?
