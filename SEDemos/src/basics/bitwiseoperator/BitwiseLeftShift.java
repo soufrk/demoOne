@@ -9,15 +9,15 @@ public class BitwiseLeftShift {
 	int k = 2;
 	int l = 3;
 	
-	performBitwiseAndOperation(i, j);
-	performBitwiseAndOperation(j, k);
-	performBitwiseAndOperation(i, k);
+	performBitwiseLeftShift(i, j);
+	performBitwiseLeftShift(j, k);
+	performBitwiseLeftShift(i, k);
 	
-	performBitwiseAndOperation(l, k);
-	performBitwiseAndOperation(l, j);
+	performBitwiseLeftShift(l, k);
+	performBitwiseLeftShift(l, j);
     }
     
-    private static void performBitwiseAndOperation(int i, int j){
+    private static void performBitwiseLeftShift(int i, int j){
 	System.out.println("i="+ i + " (Binary:" + Integer.toBinaryString(i) + ")");
 	System.out.println("j="+ j);
 	int result = i<<j;
