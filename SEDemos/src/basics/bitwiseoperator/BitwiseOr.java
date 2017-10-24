@@ -1,11 +1,11 @@
 package basics.bitwiseoperator;
 
 /**
- * Illustration of bitwise-AND operation.
+ * Illustration of bitwise-OR operation.
  * @author soufrk
  *
  */
-public class BitwiseAnd {
+public class BitwiseOr {
 
     /* Decimal value operands */
     public static void main1(String[] args) {
@@ -50,7 +50,7 @@ public class BitwiseAnd {
     private static void performBitwiseAndOperation(int i, int j){
 	System.out.println("i="+ i + " (Binary:" + Integer.toBinaryString(i) + ")");
 	System.out.println("j="+ j + " (Binary:" + Integer.toBinaryString(j) + ")");
-	int result = i&j;
+	int result = i|j;
 	System.out.println("i&j=" + result + " (Binary:" + Integer.toBinaryString(result) + ")\n");
     }
 
