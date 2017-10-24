@@ -3,7 +3,7 @@ package exceptions;
 /**
  * Different return options in try-catch-finally block
  * 
- * @author souvik.goswami
+ * @author soufrk
  *
  */
 public class ReturnFromTryCatchFinally {
