@@ -37,7 +37,7 @@ public class WrapperConfusion {
 	System.out.println(c == d);
     }
     
-    public static void main(String[] args) {
+    public static void main4(String[] args) {
 	/* The behaviour is absolutely not observed here */
 	Integer w = 129;
 	Integer x = 130;
@@ -49,6 +49,19 @@ public class WrapperConfusion {
 	y++;
 	System.out.println(y == z);
 
+	/*
+	 * Like String-pool, Integer primitive type also pools some values.
+	 */
+    }
+    
+    public static void main(String[] args) {
+	/* But again, this one is interesting. */
+	Integer x = 129;
+	Integer y = 130;
+	Integer z = ++x;
+	System.out.println(x == y);
+	System.out.println(z == x);
+	System.out.println(y == z);
 	/*
 	 * Like String-pool, Integer primitive type also pools some values.
 	 */
