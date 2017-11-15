@@ -7,7 +7,7 @@ package basics.ooad;
  * @author soufrk
  *
  */
-public class OverloadConfusion03 {
+public class OverloadConfusionInheritance {
 
     public static void main(String[] args) {
 	MyInterface first = new Implementation1();
