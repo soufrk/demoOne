@@ -1,4 +1,4 @@
-package basics;
+package basics.enums;
 
 /**
  * Demonstrates use of enums as constant values in if-else and switch-case
