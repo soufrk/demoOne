@@ -9,7 +9,7 @@ import java.util.regex.Pattern;
  * @author soufrk
  *
  */
-public class StringTokenizingUsingScanner {
+public class UsingScannerDelimiter01 {
 
     public static void main1(String[] args) {
 	// DEFAULT TOKENIZING
