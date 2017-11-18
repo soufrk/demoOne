@@ -1,4 +1,4 @@
-package io;
+package io.readwriteoperations;
 
 import java.io.Console;
 import java.nio.file.Path;

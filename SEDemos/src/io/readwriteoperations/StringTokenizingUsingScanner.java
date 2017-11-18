@@ -1,4 +1,4 @@
-package io;
+package io.readwriteoperations;
 
 import java.util.Scanner;
 import java.util.regex.Pattern;
