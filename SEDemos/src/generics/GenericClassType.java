@@ -9,13 +9,12 @@ import java.util.ArrayList;
  * @author soufrk
  *
  */
-public class Gen010 {
+public class GenericClassType {
 
-	public static void main(String[] args) {
-		Class c1 = new ArrayList<String>().getClass();
-		Class c2 = ArrayList.class;
-		System.out.println(c1 == c2);
-
-	}
+    public static void main(String[] args) {
+	Class c1 = new ArrayList<String>().getClass();
+	Class c2 = ArrayList.class;
+	System.out.println(c1 == c2);
+    }
 
 }
