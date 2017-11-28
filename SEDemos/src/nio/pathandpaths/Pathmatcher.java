@@ -1,4 +1,4 @@
-package nio;
+package nio.pathandpaths;
 
 import java.nio.file.FileSystem;
 import java.nio.file.FileSystems;
