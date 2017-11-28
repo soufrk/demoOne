@@ -11,7 +11,7 @@ import java.util.List;
  * @author soufrk
  *
  */
-public class WildCardAnyType {
+public class WildcardAnyType {
 
     public static void main(String[] args) {
 
