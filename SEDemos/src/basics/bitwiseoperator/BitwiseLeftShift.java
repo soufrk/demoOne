@@ -2,7 +2,7 @@ package basics.bitwiseoperator;
 
 public class BitwiseLeftShift {
     
-    /* Binary value operands */
+    /* Decimal value operands */
     public static void main(String[] args) {
 	int i = 0;
 	int j = 1;
