@@ -1,4 +1,4 @@
-package basics.bitwiseoperator;
+package basics.operators;
 
 public class BitwiseXor {
 
