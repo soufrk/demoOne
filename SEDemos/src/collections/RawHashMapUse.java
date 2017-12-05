@@ -12,7 +12,7 @@ import java.util.TreeMap;
  * @author soufrk
  *
  */
-public class RawMapUse {
+public class RawHashMapUse {
 
     public static void main1(String[] args) {
 	Map myMap = new HashMap();
