@@ -7,7 +7,11 @@ import java.util.TreeSet;
 import java.util.concurrent.ConcurrentSkipListSet;
 
 /**
- * This shouldn't be hard to guess.
+ * Given if the following code throws an exception,
+ * question is to guess the exception.
+ * Plus one if last class in starck-trace is guessed.
+ * 
+ * This shouldn't be too hard to guess.
  * 
  * @author soufrk
  *
