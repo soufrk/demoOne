@@ -1,5 +1,6 @@
 package collections;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
@@ -18,7 +19,7 @@ import java.util.concurrent.ConcurrentSkipListSet;
  */
 public class ListTransformation {
 
-    public static void main1(String[] args) {
+    public static void main(String[] args) {
 	int[] arr = {2,1,3};
 	List myList = Arrays.asList(arr);
 	System.out.println(new HashSet(myList));
