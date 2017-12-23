@@ -35,7 +35,6 @@ public class ObjectOverwrite {
 	} catch(IOException | ClassNotFoundException e){
 	    e.printStackTrace();
 	}
-
     }
 
 }
