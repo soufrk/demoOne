@@ -9,7 +9,7 @@ import java.io.IOException;
  * @author souvik.goswami
  *
  */
-public class Exception05 {
+public class ExceptionInCatchVsThrows {
 
     public static void main(String[] args) {
 
