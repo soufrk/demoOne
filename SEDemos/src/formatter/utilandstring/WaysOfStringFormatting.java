@@ -1,4 +1,4 @@
-package formatter;
+package formatter.utilandstring;
 
 import java.util.Formatter;
 

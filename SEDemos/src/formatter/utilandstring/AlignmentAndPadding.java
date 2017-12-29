@@ -1,4 +1,4 @@
-package formatter;
+package formatter.utilandstring;
 
 /**
  * Right/Left alignment using (-) indicator.

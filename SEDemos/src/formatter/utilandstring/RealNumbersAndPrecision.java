@@ -1,4 +1,4 @@
-package formatter;
+package formatter.utilandstring;
 
 /**
  * Demonstration of formatting decimal numbers with precision & rounding.
