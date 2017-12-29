@@ -10,7 +10,7 @@ import java.util.Date;
  * @author soufrk
  *
  */
-public class Formatter007 {
+public class StringToDatetime {
 
     public static void main(String[] args) {
 	SimpleDateFormat sdf = new SimpleDateFormat("M/d/Y H:m:s");
@@ -19,7 +19,6 @@ public class Formatter007 {
 	} catch (ParseException e) {
 	    e.printStackTrace();
 	}
-
     }
 
 }
