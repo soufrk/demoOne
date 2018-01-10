@@ -6,7 +6,7 @@ package threads;
  * @author soufrk
  *
  */
-public class TheNeverEndingThreadProblem extends Thread {
+public class TheNeverEndingStartProblem extends Thread {
 
     public static void main(String[] args) {
 	Thread t = new TheNeverEndingThreadProblem();
