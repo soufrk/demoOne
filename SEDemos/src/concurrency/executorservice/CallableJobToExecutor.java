@@ -14,7 +14,7 @@ import java.util.concurrent.Executors;
  * @author soufrk
  *
  */
-public class Executor02 {
+public class CallableJobToExecutor {
     public static void main(String[] args) {
 
 	/* The executor */

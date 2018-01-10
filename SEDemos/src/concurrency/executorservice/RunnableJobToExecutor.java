@@ -11,9 +11,26 @@ import java.util.concurrent.Executors;
  * @author soufrk
  *
  */
-public class Executor01 {
+public class RunnableJobToExecutor {
 
-    public static void main(String[] args) {
+    public static void main1(String[] args) {
+	/* Initializing an executor-service with a Thread-pool type. */
+	ExecutorService executor = Executors.newFixedThreadPool(5);
+
+	/* Assigning tasks to executor. */
+	for (int i = 0; i < 100; i++) {
+	    executor.submit(new MyTask());
+	}
+
+	/* Shutting executor down */
+	executor.shutdown();
+    }
+
+    /**
+     * But batch submit is not supported for Runnable tasks.
+     * @param args
+     */
+    public static void main2(String[] args) {
 	/* Initializing an executor-service with a Thread-pool type. */
 	ExecutorService executor = Executors.newFixedThreadPool(5);
 
@@ -23,17 +40,18 @@ public class Executor01 {
 	}
 
 	/* Creating a list of tasks to be submitted */
-	// List<Runnable> myTaskList = new ArrayList<>();
-	// Runnable myTask1 = new MyTask();
-	// myTaskList.add(myTask1);
-	// Runnable myTask2 = new MyTask();
-	// myTaskList.add(myTask2);
-	// Runnable myTask3 = new MyTask();
-	// myTaskList.add(myTask3);
-	// Runnable myTask4 = new MyTask();
-	// myTaskList.add(myTask4);
-	// Runnable myTask5 = new MyTask();
-	// myTaskList.add(myTask5);
+	List<Runnable> myTaskList = new ArrayList<>();
+	Runnable myTask1 = new MyTask();
+	myTaskList.add(myTask1);
+	Runnable myTask2 = new MyTask();
+	myTaskList.add(myTask2);
+	Runnable myTask3 = new MyTask();
+	myTaskList.add(myTask3);
+	Runnable myTask4 = new MyTask();
+	myTaskList.add(myTask4);
+	Runnable myTask5 = new MyTask();
+	myTaskList.add(myTask5);
+	executor.invokeAll(myTaskList);
 
 	/* Shutting executor down */
 	executor.shutdown();
