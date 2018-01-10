@@ -1,4 +1,4 @@
-package concurrency;
+package concurrency.collections;
 
 import java.util.ArrayList;
 import java.util.Iterator;

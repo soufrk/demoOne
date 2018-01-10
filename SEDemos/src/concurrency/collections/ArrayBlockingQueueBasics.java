@@ -1,4 +1,4 @@
-package concurrency;
+package concurrency.collections;
 
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.TimeUnit;
