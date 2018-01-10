@@ -6,7 +6,15 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class Executor03 {
+/**
+ * Simple use of fixed-thread-pool executor.
+ * 
+ * Use-case: Each thread counts from 0 till 50,000.
+ * 
+ * @author soufrk
+ *
+ */
+public class FixedThreadPoolExecutorDemo {
 
     public static void main(String[] args) {
 	ExecutorService executor = Executors.newFixedThreadPool(50);
@@ -41,9 +49,7 @@ class ExecSingleton03 {
 
     public void countTill50K() {
 	System.out.println("Thread:" + Thread.currentThread().getName() + "start with:" + counter);
-	for (counter = 0; counter < 50000; counter++) {
-
-	}
+	for (counter = 0; counter < 50000; counter++) {//do nothing}
 	System.out.println("Thread:" + Thread.currentThread().getName() + "end with:" + counter);
     }
 }
