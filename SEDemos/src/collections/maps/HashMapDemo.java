@@ -1,4 +1,4 @@
-package collections;
+package collections.maps;
 
 import java.io.IOException;
 import java.io.InvalidObjectException;
