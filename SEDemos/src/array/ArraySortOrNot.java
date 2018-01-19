@@ -11,24 +11,27 @@ import java.util.Arrays;
 
 public class ArraySortOrNot {
     
-    public static void main(String[] args) {
+    // Sort a String array
+    public static void main1(String[] args) {
 	String []arr = {"Z", "Y", "P", "T", "M"};
 	Arrays.sort(arr, null);
 	for(String i:arr)
 	    System.out.println(i + " ");
     }
 
-    public static void main1(String[] args) {
+    // Sort an integer array
+    public static void main2(String[] args) {
 	int []arr = {1, 0, 7, 6, 3};
 	Arrays.sort(arr, null);
 	for(int i:arr)
 	    System.out.println(i + " ");
     }
     
-    public static void main2(String[] args) {
-	int []arr = {1, 0, 7, 6, 3};
+    // Sort an Object array.
+    public static void main(String[] args) {
+	Object []arr = {1, 0, 7, "6", 3};
 	Arrays.sort(arr);
-	for(int i:arr)
+	for(Object i:arr)
 	    System.out.println(i + " ");
     }
 
