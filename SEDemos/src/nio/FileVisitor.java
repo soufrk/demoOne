@@ -11,6 +11,7 @@ import java.nio.file.attribute.BasicFileAttributes;
 /**
  * Demo of FileVisitor.
  * <ul>
+ * <li>Only visits file not directories.</li>
  * <li>Alphabetical order of file visit.</li>
  * <li>Folder depth visit first.</li>
  * </ul>
@@ -19,6 +20,8 @@ import java.nio.file.attribute.BasicFileAttributes;
  *
  */
 public class FileVisitor extends SimpleFileVisitor<Path> {
+    
+    private static final String PATH = "D:/Workspace/MySpace/Rough/testDir";
 
     @Override
     public FileVisitResult visitFile(Path file, BasicFileAttributes attr) {
@@ -28,24 +31,29 @@ public class FileVisitor extends SimpleFileVisitor<Path> {
 
     @Override
     public FileVisitResult postVisitDirectory(Path dir, IOException exc) {
-	// System.out.format("Directory: %s%n", dir);
+	System.out.println("After visiting directory:" + dir.toString());
+	return FileVisitResult.CONTINUE;
+    }
+    
+    @Override
+    public FileVisitResult preVisitDirectory(Path dir, BasicFileAttributes attrs){
+	System.out.println("Before visiting directory:" + dir.toString());
 	return FileVisitResult.CONTINUE;
     }
 
     @Override
-    public FileVisitResult visitFileFailed(Path file, IOException exc) {
-	System.err.println(exc);
+    public FileVisitResult visitFileFailed(Path file, IOException exception) {
+	System.err.println(exception);
 	return FileVisitResult.CONTINUE;
     }
 
     public static void main(String[] args) {
-	Path path = Paths.get("/");
+	Path path = Paths.get(PATH);
 	try {
 	    Files.walkFileTree(path, new FileVisitor());
 	} catch (IOException e) {
 	    e.printStackTrace();
 	}
-
     }
 
 }
