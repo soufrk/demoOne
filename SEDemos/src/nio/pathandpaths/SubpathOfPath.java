@@ -12,7 +12,7 @@ public class SubpathOfPath {
     static final Path PATH = Paths.get("A/B/C/D/E/F/G");
 
     /* Positive examples. Guess the ouput. */
-    public static void main1(String[] args) {
+    public static void main(String[] args) {
 	System.out.println(PATH.subpath(0, 1));
 	System.out.println(PATH.subpath(0, 2));
 	System.out.println(PATH.subpath(0, 7));
@@ -20,7 +20,7 @@ public class SubpathOfPath {
     }
     
     /* Negative examples. Guess the exception */
-    public static void main(String[] args) {
+    public static void main2(String[] args) {
 	//System.out.println(PATH.subpath(0, 0));
 	//System.out.println(PATH.subpath(-1, 0));
 	//System.out.println(PATH.subpath(0, -1));

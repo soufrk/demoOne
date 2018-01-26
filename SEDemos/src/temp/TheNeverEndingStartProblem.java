@@ -22,7 +22,7 @@ public class TheNeverEndingStartProblem extends Thread {
 
     @Override
     public void run() {
-	this = new TheNeverEndingThreadProblem();
+	//this = new TheNeverEndingThreadProblem();
     }
 
 }
