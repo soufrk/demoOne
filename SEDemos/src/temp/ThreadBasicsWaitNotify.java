@@ -6,13 +6,12 @@ package temp;
  * @author soufrk
  *
  */
-public class Thread02 extends Thread {
+public class ThreadBasicsWaitNotify extends Thread {
 
     public static void main(String[] args) throws InterruptedException {
-	Thread02 t = new Thread02();
+	ThreadBasicsWaitNotify t = new ThreadBasicsWaitNotify();
 	t.start();
 	t.wait();
-
     }
 
     @Override

@@ -10,7 +10,7 @@ package temp;
  * @author soufrk
  *
  */
-public class Thread01 {
+public class ThreadBasicsRunStart {
 
     public static void main(String[] args) {
 	Thread t = new Thread(new A());
