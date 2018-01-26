@@ -6,7 +6,7 @@ package threads;
  * @author soufrk
  *
  */
-public class SleepingThread {
+public class TheSleepingThreadProblem {
 
     public static void main(String[] args) {
 	Thread t = new Thread();
