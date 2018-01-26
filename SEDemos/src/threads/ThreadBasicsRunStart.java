@@ -1,4 +1,4 @@
-package temp;
+package threads;
 
 /**
  * Basics of Thread

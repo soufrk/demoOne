@@ -1,4 +1,4 @@
-package temp;
+package threads;
 
 public class ThreadTest extends Thread{
 	

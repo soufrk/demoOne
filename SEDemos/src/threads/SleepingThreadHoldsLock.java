@@ -1,4 +1,4 @@
-package temp;
+package threads;
 
 /**
  * Let's put an end to if a sleeping-thread holds a lock

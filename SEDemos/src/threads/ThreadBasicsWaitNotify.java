@@ -1,4 +1,4 @@
-package temp;
+package threads;
 
 /**
  * Think you can make a thread wait out of nowhere ?? Think again !!

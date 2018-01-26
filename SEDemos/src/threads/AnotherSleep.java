@@ -1,4 +1,4 @@
-package temp;
+package threads;
 
 /**
  * Assuming things to be perfect, what should be the difference in 

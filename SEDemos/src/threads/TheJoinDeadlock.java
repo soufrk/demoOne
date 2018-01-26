@@ -1,4 +1,4 @@
-package temp;
+package threads;
 
 /**
  * Simple deadlock by using join() method.

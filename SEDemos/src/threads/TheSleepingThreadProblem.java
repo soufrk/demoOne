@@ -1,4 +1,4 @@
-package temp;
+package threads;
 
 /**
  * Is anything sleeping over here ?

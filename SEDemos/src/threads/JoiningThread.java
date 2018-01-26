@@ -1,4 +1,4 @@
-package temp;
+package threads;
 
 /**
  * What's the harm in joining a Thread which hasn't yet been started.
