@@ -16,7 +16,7 @@ public class JoiningThread {
 	    }
 	});
 	// t.start();
-	//t.join();
+	t.join();
     }
 
 }
