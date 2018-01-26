@@ -14,7 +14,7 @@ import java.io.Serializable;
  * needed</li>
  * </ul>
  * 
- * @author souvik.goswami
+ * @author soufrk
  *
  */
 public class SerializaionAndSuperConstructor {
