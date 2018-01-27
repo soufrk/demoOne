@@ -7,6 +7,12 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
+/**
+ * Guess the output, or outcome !!
+ * 
+ * @author soufrk
+ *
+ */
 public class ParentNotSerializedProblem {
     
     private static final String FILE_NAME = "abc.ser";
