@@ -1,4 +1,4 @@
-package colne;
+package cloning;
 
 /**
  * So if an object is cloned,<ul>
