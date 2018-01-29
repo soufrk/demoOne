@@ -6,7 +6,7 @@ package generics;
  * @author soufrk
  *
  */
-public class UpperBoundVsRawTypeProblem {
+public class LowerBoundVsRawTypeProblem {
 
     public static void main(String[] args) {
 	foo(new C<B>());
