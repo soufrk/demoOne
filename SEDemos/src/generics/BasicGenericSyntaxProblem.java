@@ -9,7 +9,7 @@ package generics;
  * @author soufrk
  *
  */
-public class BasicGenericSyntax {
+public class BasicGenericSyntaxProblem {
 
     public void printObject(T t){}
 
@@ -23,7 +23,7 @@ public class BasicGenericSyntax {
 
 }
 
-public class BasicGenericSyntax<T> {
+public class BasicGenericSyntaxProblem<T> {
 
     public void printObject(T t){}
 
@@ -37,7 +37,7 @@ public class BasicGenericSyntax<T> {
 
 }
 
-public class BasicGenericSyntax<E> {
+public class BasicGenericSyntaxProblem<E> {
 
     public void printObject(T t){}
 
@@ -51,7 +51,7 @@ public class BasicGenericSyntax<E> {
 
 }
 
-public class BasicGenericSyntax<T> {
+public class BasicGenericSyntaxProblem<T> {
 
     public void printObject(T t){}
 
