@@ -15,7 +15,7 @@ public class BasicGenericSyntax {
 
     public <T> void printObject(T t) {}
 
-    public <T>void printObject(Class<T extends Object> e){}
+    public <T> void printObject(Class<T extends Object> e){}
 
     public <T> void printObject(Class<T> t) {}
 
@@ -29,7 +29,7 @@ public class BasicGenericSyntax<T> {
 
     public <T> void printObject(T t) {}
 
-    public <T>void printObject(Class<T extends Object> e){}
+    public <T> void printObject(Class<T extends Object> e){}
 
     public <T> void printObject(Class<T> t) {}
 
@@ -43,7 +43,7 @@ public class BasicGenericSyntax<E> {
 
     public <T> void printObject(T t) {}
 
-    public <T>void printObject(Class<T extends Object> e){}
+    public <T> void printObject(Class<T extends Object> e){}
 
     public <T> void printObject(Class<T> t) {}
 
@@ -57,7 +57,7 @@ public class BasicGenericSyntax<T> {
 
     public <T> void printObject(T t) {}
 
-    public <T>void printObject(Class<T extends Object> e){}
+    public <T> void printObject(Class<T extends Object> e){}
 
     public <T> void printObject(Class<T> t) {}
 
