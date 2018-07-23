@@ -1,4 +1,4 @@
-package generics;
+package generics.syntax;
 
 /**
  * Simple Generic method construct.
