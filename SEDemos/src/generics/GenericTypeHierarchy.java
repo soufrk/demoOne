@@ -16,9 +16,9 @@ import java.util.List;
 public class GenericTypeHierarchy<E> {
 
     public static void main(String[] args) {
-	Gen002<BaseParent> genericObj1 = new Gen002<>();
-	Gen002<BaseChild1> genericObj2 = new Gen002<>();
-	Gen002<BaseParent> genericObj3 = new Gen002<>();
+	GenericTypeHierarchy<BaseParent> genericObj1 = new GenericTypeHierarchy<>();
+	GenericTypeHierarchy<BaseChild1> genericObj2 = new GenericTypeHierarchy<>();
+	GenericTypeHierarchy<BaseParent> genericObj3 = new GenericTypeHierarchy<>();
 
 	genericObj1 = genericObj2;
 	genericObj1 = genericObj3;
