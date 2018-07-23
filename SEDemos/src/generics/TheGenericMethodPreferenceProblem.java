@@ -6,7 +6,7 @@ package generics;
  * @author soufrk
  *
  */
-public class TheGenericMethodPreference {
+public class TheGenericMethodPreferenceProblem {
 
     public static void main(String[] args) {
 	foo("abcd");
