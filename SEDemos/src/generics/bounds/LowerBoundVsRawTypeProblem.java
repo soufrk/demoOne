@@ -1,4 +1,4 @@
-package generics;
+package generics.bounds;
 
 /**
  * One of these methods will not comile.

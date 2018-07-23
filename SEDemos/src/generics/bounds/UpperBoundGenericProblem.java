@@ -1,4 +1,4 @@
-package generics;
+package generics.bounds;
 
 import java.util.LinkedList;
 import java.util.List;
