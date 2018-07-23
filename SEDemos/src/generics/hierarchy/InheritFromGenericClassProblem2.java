@@ -1,4 +1,4 @@
-package generics;
+package generics.hierarchy;
 
 /**
  * Continuation of previous problem. Even after successfully inherting from a

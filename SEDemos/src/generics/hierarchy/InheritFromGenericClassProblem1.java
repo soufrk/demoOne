@@ -1,4 +1,4 @@
-package generics;
+package generics.hierarchy;
 
 /**
  * Only one class compiles, you have to specify why others fails.
