@@ -7,14 +7,14 @@ import java.util.List;
 /**
  * Bounded wildcard.
  * 
- * Earlier we saw that wildcard accepts any Class. Wildcards can be
- * restricted for to a specific hierarchy, combinations of hierarchies.
+ * Earlier we saw that wildcard accepts any Class. Wildcards can be restricted
+ * for to a specific hierarchy, combinations of hierarchies.
  * 
- * Restriction on hierarchy of parent is called - Upper Bound
- * Restriction on hierarchy of childs is called - Lower Bound
+ * Restriction on hierarchy of parent is called - Upper Bound Restriction on
+ * hierarchy of childs is called - Lower Bound
  * 
- * Let's see Upper Bounded first, where the the type of Parameter
- * is bounded to any subclass of a given class.
+ * Let's see Upper Bounded first, where the the type of Parameter is bounded to
+ * any subclass of a given class.
  * 
  * @author soufrk
  *
@@ -22,27 +22,28 @@ import java.util.List;
 public class WildcardUpperBound {
 
     public static void main(String[] args) {
-	MyUpperBounded<Integer> number1 = new MyUpperBounded<>();
+
+	MyNumber<Integer> number1 = new MyNumber<>();
 	number1.printValue(10);
-	
-	MyUpperBounded<Long> number2 = new MyUpperBounded<>();
+
+	MyNumber<Long> number2 = new MyNumber<>();
 	number2.printValue(120L);
-	
-	MyUpperBounded<Double> number3 = new MyUpperBounded();
+
+	MyNumber<Double> number3 = new MyNumber();
 	number3.printValue(0.1254D);
-	
-	// We canot use MyNumber with any onther type
-	MyNumber007<String> number4 = new MyNumber007();
-	
+
+	// We cannot use MyNumber with any other type
+	MyNumber<String> number4 = new MyNumber();
+
 	// The following List can point to any of,
 	List<? extends Number> listOfNumbers = new LinkedList<Integer>();
 	listOfNumbers = new LinkedList<Long>();
 	listOfNumbers = new LinkedList<Double>();
-	
-	// But, that's not possible 
+
+	// But, that's not possible
 	listOfNumbers = new LinkedList<String>();
-	
-	// What about 
+
+	// What about
 	listOfNumbers.add(10);
 	listOfNumbers.add(20L);
 	listOfNumbers.add(30.1);
@@ -50,11 +51,11 @@ public class WildcardUpperBound {
 
 }
 
-/* MyNmber is Generalised for operation with any
- * child of Number class.
+/*
+ * MyNumber is generalised for operation with any child of Number class.
  */
-class MyUpperBounded<T extends Number>{
-	public void printValue(T t){
-		System.out.println(t.toString());
-	}
+class MyNumber<T extends Number> {
+    public void printValue(T t) {
+	System.out.println(t.toString());
+    }
 }
