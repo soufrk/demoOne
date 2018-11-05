@@ -1,4 +1,4 @@
-package test;
+package array;
 
 import java.util.Arrays;
 
@@ -24,6 +24,14 @@ public class ArrayCopySizeProblem {
 	destination = Arrays.copyOf(source, 4);
 	System.out.println(Arrays.toString(destination));
 	destination[3] = 4;
+	System.out.println(Arrays.toString(destination));
+    }
+    
+    public static void main(String[] args) {
+	int []source = {1, 2, 3, 4};
+	int []destination = new int[4];
+	destination = Arrays.copyOfRange(source, 0, 2);
+	destination[3] = 5;
 	System.out.println(Arrays.toString(destination));
     }
 
