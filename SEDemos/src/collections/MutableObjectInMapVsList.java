@@ -14,8 +14,8 @@ import java.util.Map;
 public class MutableObjectInMapVsList {
 
     /*
-     * Let's start with primitive key in a map.
-     * How many entries are there in the map ?
+     * Let's start with primitive key in a map. How many entries are there in the
+     * map ?
      */
     public static void main1(String[] args) {
 	Map<Integer, String> myMap = new HashMap<>();
@@ -27,10 +27,9 @@ public class MutableObjectInMapVsList {
 	myMap.put(i, s);
 	System.out.println(myMap);
     }
-    
+
     /*
-     * Now if we have a custom class as key.
-     * How many entries are there in the map ?
+     * Now if we have a custom class as key. How many entries are there in the map ?
      */
     public static void main2(String[] args) {
 	Map<Integer, MyClass> myMap2 = new HashMap<>();
@@ -41,12 +40,12 @@ public class MutableObjectInMapVsList {
 	key = 11;
 	myMap2.put(key, value);
 	value.setId(13);
-	//System.out.println(myMap2);
+	// System.out.println(myMap2);
     }
-    
+
     /*
-     * Considering HashMap is an identity based collection,
-     * what will be the behaviour on LinkedList
+     * Considering HashMap is an identity based collection, what will be the
+     * behaviour on LinkedList
      */
     public static void main3(String[] args) {
 	List<MyClass> myList = new LinkedList<>();
@@ -56,10 +55,10 @@ public class MutableObjectInMapVsList {
 	listItem.setId(11);
 	System.out.println("After modifying:" + myList);
     }
-    
+
     /*
-     * What if same object reference is inserted multiple
-     * times in a list, and then the reference be mutated.
+     * What if same object reference is inserted multiple times in a list, and then
+     * the reference be mutated.
      */
     public static void main(String[] args) {
 	List<MyClass> myList = new LinkedList<>();
@@ -73,28 +72,27 @@ public class MutableObjectInMapVsList {
 	listItem.setId(11);
 	System.out.println("After mutating the reference:\n" + myList);
     }
-    
-    
+
     static class MyClass {
-	    int id;
-
-	    public MyClass(int id) {
-		super();
-		this.id = id;
-	    }
-
-	    @Override
-	    public String toString() {
-		return "MyClass [id=" + id + "]";
-	    }
-
-	    public int getId() {
-		return id;
-	    }
-
-	    public void setId(int id) {
-		this.id = id;
-	    }
+	int id;
+	
+	public MyClass(int id) {
+	    super();
+	    this.id = id;
 	}
+	
+	@Override
+	public String toString() {
+	    return "MyClass [id=" + id + "]";
+	}
+	
+	public int getId() {
+	    return id;
+	}
+	
+	public void setId(int id) {
+	    this.id = id;
+	}
+    }
 
 }
