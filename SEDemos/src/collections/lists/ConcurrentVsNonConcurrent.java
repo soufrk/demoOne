@@ -15,39 +15,35 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public class ConcurrentVsNonConcurrent {
 
     public static void main1(String[] args) {
-	// Using any one of the below,
 	List<String> myList = new CopyOnWriteArrayList<>();
-
 	myList.add("A");
 	myList.add("B");
-
 	Iterator<String> myItr = myList.iterator();
-	myList.remove(0);
-	System.out.println(myList);
-	myList.remove(0);
-	System.out.println(myItr.hasNext());
-	System.out.println(myItr.next());
-
-	System.out.println(myItr.next());
-	System.out.println(myList);
+	System.out.println("Removing first element: " + myList.remove(0));
+	//myList.remove(0);
+	System.out.println("Printing list: " + myList);
+	System.out.println("Removing first element: " + myList.remove(0));
+	//myList.remove(0);
+	System.out.println("Check for next element in Iterator:" + myItr.hasNext());
+	System.out.println("Print next element using Iterator:" + myItr.next());
+	System.out.println("Print next element using Iterator:" + myItr.next());
+	System.out.println("Printing list: " + myList);
     }
     
     public static void main2(String[] args) {
-	// Using any one of the below,
 	List<String> myList = new LinkedList<>();
-
 	myList.add("A");
 	myList.add("B");
-
 	Iterator<String> myItr = myList.iterator();
-	myList.remove(0);
-	System.out.println(myList);
-	myList.remove(0);
-	System.out.println(myItr.hasNext());
-	System.out.println(myItr.next());
-
-	System.out.println(myItr.next());
-	System.out.println(myList);
+	System.out.println("Removing first element: " + myList.remove(0));
+	//myList.remove(0);
+	System.out.println("Printing list: " + myList);
+	System.out.println("Removing first element: " + myList.remove(0));
+	//myList.remove(0);
+	System.out.println("Check for next element in Iterator:" + myItr.hasNext());
+	System.out.println("Print next element using Iterator:" + myItr.next());
+	System.out.println("Print next element using Iterator:" + myItr.next());
+	System.out.println("Printing list: " + myList);
     }
 
 }
