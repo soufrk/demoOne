@@ -9,7 +9,7 @@ import java.util.List;
  * @author soufrk
  *
  */
-public class ListOfList {
+public class ListOfListProblem {
 
     public static void main(String[] args) {
 	List<List<String>> myList1 = new LinkedList<>();
