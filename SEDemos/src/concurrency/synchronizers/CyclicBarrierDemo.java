@@ -1,4 +1,4 @@
-package concurrency;
+package concurrency.synchronizers;
 
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;

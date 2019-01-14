@@ -1,4 +1,4 @@
-package concurrency;
+package concurrency.synchronizers;
 
 import java.util.concurrent.CountDownLatch;
 

@@ -50,6 +50,7 @@ class ExecSingleton03 {
     public void countTill50K() {
 	System.out.println("Thread:" + Thread.currentThread().getName() + "start with:" + counter);
 	for (counter = 0; counter < 50000; counter++) {//do nothing}
-	System.out.println("Thread:" + Thread.currentThread().getName() + "end with:" + counter);
+	    System.out.println("Thread:" + Thread.currentThread().getName() + "end with:" + counter);
+	}
     }
 }
