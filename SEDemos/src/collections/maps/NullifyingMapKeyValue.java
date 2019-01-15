@@ -5,6 +5,7 @@ import java.util.Map;
 
 /**
  * Shouldn't be too hard to guess.
+ * 
  * @author soufrk
  *
  */
