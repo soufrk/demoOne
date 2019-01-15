@@ -33,7 +33,7 @@ public class BitwiseAnd {
     }
     
     /* Binary value operands */
-    public static void main(String[] args) {
+    public static void main3(String[] args) {
 	int i = 0b00;
 	int j = 0b01;
 	int k = 0b10;

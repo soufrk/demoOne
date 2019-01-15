@@ -1,7 +1,8 @@
 package basics.operators;
 
 public class BitwiseUnsignedRightShift {
-    /* Binary value operands */
+    
+    /* Decimal value operands */
     public static void main(String[] args) {
 	int i = 16;
 	int j = -16;
