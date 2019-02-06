@@ -1,5 +1,6 @@
-package collections;
+package collections.lists;
 
+import java.util.ArrayDeque;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -28,8 +29,10 @@ public class QueueSpecialOperations {
 	System.out.println("Last element:" + q.peek() + ", And the Q:" + q);
     }
     
-    public static void main3(String[] args) {
-	Queue<String> q = new LinkedList<>();
+    public static void main(String[] args) {
+	Queue<String> q = new ArrayDeque<>(1);
+	System.out.println("Last element:" + q.offer("A") + ", And the Q:" + q);
+	System.out.println("Last element:" + q.offer("B") + ", And the Q:" + q);
 	System.out.println("Last element:" + q.offer(null) + ", And the Q:" + q);
     }
 
