@@ -78,6 +78,7 @@ public class SerializingVariousFields {
 	    ObjectInputStream in = new ObjectInputStream(fileIn);
 	    MyPrivate obj = (MyPrivate) in.readObject();
 	    System.out.println(obj);
+	    System.out.println("w=" + obj.w);
 	    in.close();
 	    fileIn.close();
 	} catch (Exception ex) {
@@ -109,6 +110,7 @@ class MyPrivate implements Serializable {
     int z = 12;
     static int w = 13;
     public int a = 14;
+    transient int b = 15;
 
     /*@Override
     public String toString() {
@@ -120,9 +122,18 @@ class MyPrivate implements Serializable {
 	System.out.println("Current value of w=" + w);
     }
 
+    public static int getW() {
+        return w;
+    }
+
     @Override
     public String toString() {
-	return "MyPrivate [y=" + y + ", z=" + z + ", w=" + w + ", a=" + a + "]";
+	return "MyPrivate [x=" + x + ", y=" + y + ", z=" + z + ", a=" + a + ", b=" + b + "]";
     }
+
+    /*@Override
+    public String toString() {
+	return "MyPrivate [y=" + y + ", z=" + z + ", w=" + w + ", a=" + a + "]";
+    }*/
 
 }
