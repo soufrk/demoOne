@@ -14,22 +14,22 @@ import java.util.Scanner;
  */
 public class ContinuousFileRead {
 
-    public static void main(String[] args) {
-	Path path = Paths.get("test.txt");
-	String input = "N";
-	Scanner consoleIn = new Scanner(System.in);
+	public static void main(String[] args) {
+		Path path = Paths.get("test.txt");
+		String input = "N";
+		Scanner consoleIn = new Scanner(System.in);
 
-	do {
-	    System.out.println("Read file(Y/N):");
-	    input = consoleIn.nextLine();
-	    try (Scanner scanner = new Scanner(Files.newBufferedReader(path));) {
-		while (scanner.hasNextLine()) {
-		    System.out.println(scanner.nextLine());
-		}
-	    } catch (IOException e) {
-		e.printStackTrace();
-	    }
-	} while (input.equals("Y"));
-    }
+		do {
+			System.out.println("Read file(Y/N):");
+			input = consoleIn.nextLine();
+			try (Scanner scanner = new Scanner(Files.newBufferedReader(path));) {
+				while (scanner.hasNextLine()) {
+					System.out.println(scanner.nextLine());
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		} while (input.equals("Y"));
+	}
 
 }

@@ -16,6 +16,7 @@ import java.util.regex.Pattern;
  * @see https://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html
  */
 public class Pattern012 {
+	
 	public static void main(String[] args) {
 		String input0 = "a aaa aaa aaaab";
 		String input1 = "a aab aaa aaaab";

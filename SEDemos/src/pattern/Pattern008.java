@@ -5,9 +5,10 @@ import java.util.regex.Pattern;
 
 /**
  * Use of an extra ? Types of quantifiers - Greedy, Reluctant, Possessive
- * <p/><b>Part-I (Greedy Vs (Reluctant[Lazy]))</b></p>
- * ? (Greedy) if not once.
- * ?? (Reluctant[Lazy]) if not at most once.
+ * <p/>
+ * <b>Part-I (Greedy Vs (Reluctant[Lazy]))</b>
+ * </p>
+ * ? (Greedy) if not once. ?? (Reluctant[Lazy]) if not at most once.
  * <p/>
  * Both, search for at most(if not) single occurrence [Zero OR Once]. While ? is
  * more positive, ?? returns as much negative as possible.
@@ -56,14 +57,15 @@ public class Pattern008 {
 		return output;
 	}
 
-	/*
-	 * private static String getResultWithMatch(String input, Pattern pattern,
-	 * String desc) { Matcher matcher = pattern.matcher(input); String output =
-	 * "Pattern: " + pattern.pattern() + "\nDescription: " + desc + "\nInput:" +
-	 * input + "\nLength:" + input.length() + "\nFound at:["; while
-	 * (matcher.find()) { output += matcher.start() + "(" + matcher.group() +
-	 * ")," ; } output = output.substring(0, output.length() - 1) + "]\n";
-	 * return output; }
-	 */
+	private static String getResultWithMatch(String input, Pattern pattern, String desc) {
+		Matcher matcher = pattern.matcher(input);
+		String output = "Pattern: " + pattern.pattern() + "\nDescription: " + desc + "\nInput:" + input + "\nLength:"
+				+ input.length() + "\nFound at:[";
+		while (matcher.find()) {
+			output += matcher.start() + "(" + matcher.group() + "),";
+		}
+		output = output.substring(0, output.length() - 1) + "]\n";
+		return output;
+	}
 
 }

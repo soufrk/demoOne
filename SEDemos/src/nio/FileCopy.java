@@ -21,24 +21,24 @@ import java.nio.file.StandardCopyOption;
  */
 public class FileCopy {
 
-    public static void main1(String[] args) {
-	Path path = Paths.get("testDir");
-	Path emptyDest = Paths.get("dest1");
-	try {
-	    Files.copy(path, emptyDest, StandardCopyOption.REPLACE_EXISTING);
-	} catch (IOException e) {
-	    e.printStackTrace();
+	public static void main1(String[] args) {
+		Path path = Paths.get("testDir");
+		Path emptyDest = Paths.get("dest1");
+		try {
+			Files.copy(path, emptyDest, StandardCopyOption.REPLACE_EXISTING);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
-    }
 
-    public static void main2(String[] args) {
-	Path path = Paths.get("testDir", "a.txt");
-	Path emptyDest = Paths.get("dest1");
-	try {
-	    Files.copy(path.toAbsolutePath(), emptyDest, StandardCopyOption.REPLACE_EXISTING);
-	} catch (IOException e) {
-	    e.printStackTrace();
+	public static void main2(String[] args) {
+		Path path = Paths.get("testDir", "a.txt");
+		Path emptyDest = Paths.get("dest1");
+		try {
+			Files.copy(path.toAbsolutePath(), emptyDest, StandardCopyOption.REPLACE_EXISTING);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
-    }
 
 }

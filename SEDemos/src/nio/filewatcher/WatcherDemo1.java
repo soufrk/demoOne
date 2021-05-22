@@ -22,43 +22,43 @@ import java.util.Scanner;
  */
 public class WatcherDemo1 {
 
-    public static void main(String[] args) {
-	Path dir = Paths.get("").toAbsolutePath();
-	try {
-	    WatchService watcher = FileSystems.getDefault().newWatchService();
-	    WatchKey key = dir.register(watcher, ENTRY_CREATE, ENTRY_DELETE, ENTRY_MODIFY);
-	    while (true) {
-		WatchKey innerKey;
+	public static void main(String[] args) {
+		Path dir = Paths.get("").toAbsolutePath();
 		try {
-		    key = watcher.take();
-		} catch (InterruptedException x) {
-		    return;
-		}
-		for (WatchEvent<?> event : key.pollEvents()) {
-		    WatchEvent.Kind<?> kind = event.kind();
-		    if (kind == OVERFLOW) {
-			continue;
-		    }
-		    WatchEvent<Path> ev = (WatchEvent<Path>) event;
-		    Path filename = ev.context();
-		    System.out.println("Event triggered by:" + filename);
-		    try (Scanner scanner = new Scanner(Files.newBufferedReader(filename));) {
-			while (scanner.hasNextLine()) {
-			    System.out.println(scanner.nextLine());
-			}
-		    } catch (IOException e) {
-			e.printStackTrace();
-		    }
+			WatchService watcher = FileSystems.getDefault().newWatchService();
+			WatchKey key = dir.register(watcher, ENTRY_CREATE, ENTRY_DELETE, ENTRY_MODIFY);
+			while (true) {
+				WatchKey innerKey;
+				try {
+					key = watcher.take();
+				} catch (InterruptedException x) {
+					return;
+				}
+				for (WatchEvent<?> event : key.pollEvents()) {
+					WatchEvent.Kind<?> kind = event.kind();
+					if (kind == OVERFLOW) {
+						continue;
+					}
+					WatchEvent<Path> ev = (WatchEvent<Path>) event;
+					Path filename = ev.context();
+					System.out.println("Event triggered by:" + filename);
+					try (Scanner scanner = new Scanner(Files.newBufferedReader(filename));) {
+						while (scanner.hasNextLine()) {
+							System.out.println(scanner.nextLine());
+						}
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
 
-		    boolean valid = key.reset();
-		    if (!valid) {
-			break;
-		    }
+					boolean valid = key.reset();
+					if (!valid) {
+						break;
+					}
+				}
+			}
+		} catch (IOException x) {
+			System.err.println(x);
 		}
-	    }
-	} catch (IOException x) {
-	    System.err.println(x);
 	}
-    }
 
 }

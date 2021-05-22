@@ -18,29 +18,31 @@ import java.util.regex.Pattern;
  */
 public class TypesOfQuantifiers2 {
 
-    public static void main(String[] args) {
-	String input0 = "ab aab aabb aaab";
-	String input1 = "a aa aaa aaaa";
+	public static void main(String[] args) {
+		String input0 = "ab aab aabb aaab";
+		String input1 = "a aa aaa aaaa";
 
-	System.out.println(getResult(input0, Pattern.compile("a*"), "Search for sequence with 1 or more 'a' (Any sequence of 'a')."));
-	System.out.println(getResult(input0, Pattern.compile("a*?"), "Greedy search for 1 or none 'a'"));
-	System.out.println(getResult(input1, Pattern.compile("a*"), "Search for sequence with 1 or none 'a' (Either sigle or none)."));
-	System.out.println(getResult(input1, Pattern.compile("a*?"), "Greedy search for 1 or none 'a'"));
-    }
-
-    private static String getResult(String input, Pattern pattern, String desc) {
-	Matcher matcher = pattern.matcher(input);
-	String outputResult = "Match Result:[";
-	String output = "Pattern: " + pattern.pattern() + "\nDescription: " + desc + "\nInput:" + input + "\nLength:"
-		+ input.length() + "\nMatch Index:[";
-	while (matcher.find()) {
-	    output += matcher.start() + ",";
-	    outputResult += matcher.start() + "(" + matcher.group() + "),";
+		System.out.println(getResult(input0, Pattern.compile("a*"),
+				"Search for sequence with 1 or more 'a' (Any sequence of 'a')."));
+		System.out.println(getResult(input0, Pattern.compile("a*?"), "Greedy search for 1 or none 'a'"));
+		System.out.println(getResult(input1, Pattern.compile("a*"),
+				"Search for sequence with 1 or none 'a' (Either sigle or none)."));
+		System.out.println(getResult(input1, Pattern.compile("a*?"), "Greedy search for 1 or none 'a'"));
 	}
-	output = output.substring(0, output.length() - 1) + "]\n";
-	output += outputResult;
-	output = output.substring(0, output.length() - 1) + "]\n";
-	return output;
-    }
+
+	private static String getResult(String input, Pattern pattern, String desc) {
+		Matcher matcher = pattern.matcher(input);
+		String outputResult = "Match Result:[";
+		String output = "Pattern: " + pattern.pattern() + "\nDescription: " + desc + "\nInput:" + input + "\nLength:"
+				+ input.length() + "\nMatch Index:[";
+		while (matcher.find()) {
+			output += matcher.start() + ",";
+			outputResult += matcher.start() + "(" + matcher.group() + "),";
+		}
+		output = output.substring(0, output.length() - 1) + "]\n";
+		output += outputResult;
+		output = output.substring(0, output.length() - 1) + "]\n";
+		return output;
+	}
 
 }
