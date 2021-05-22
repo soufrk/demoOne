@@ -10,11 +10,11 @@ import java.util.Scanner;
  */
 public class TryWithResourceSyntax {
 
-    public static void main(String[] args) {
-	try (Scanner a = new Scanner(System.in);
-		System.out.println("Hello");
-		Scanner b = new Scanner(System.in);) {
-	}
+	public static void main(String[] args) {
+		try (Scanner a = new Scanner(System.in);
+				System.out.println("Hello");
+				Scanner b = new Scanner(System.in);) {
+		}
     }
 
 }

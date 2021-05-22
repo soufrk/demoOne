@@ -10,31 +10,30 @@ import java.io.IOException;
  */
 public class TryWithoutCatch {
 
-    public static void main1(String[] args) {
-	try {
-	    System.out.println("See");
-	} finally {
-	    System.out.println("This works.");
-	}
-    }
-    
-    public static void main2(String[] args) {
-	try {
-	    System.out.println("And");
-	    throw new IOException();
-	} finally {
-	    System.out.println("This works as well.");
-	}
-    }
-    
-    public static void main3(String[] args) {
-	try {
-	    System.out.println("But");
-	    throw new NullPointerException();
-	} finally {
-	    System.out.println("Will this work ?");
+	public static void main1(String[] args) {
+		try {
+			System.out.println("See");
+		} finally {
+			System.out.println("This works.");
+		}
 	}
 
-    }
+	public static void main2(String[] args) throws IOException {
+		try {
+			System.out.println("And");
+			throw new IOException();
+		} finally {
+			System.out.println("This works as well.");
+		}
+	}
+
+	public static void main(String[] args) {
+		try {
+			System.out.println("But");
+			throw new NullPointerException();
+		} finally {
+			System.out.println("Will this work ?");
+		}
+	}
 
 }

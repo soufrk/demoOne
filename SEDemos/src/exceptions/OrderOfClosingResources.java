@@ -12,39 +12,43 @@ package exceptions;
  */
 public class OrderOfClosingResources {
 
-    public static void main(String[] args) {
-	try (MyClass01 a = new MyClass01(); MyClass02 b = new MyClass02(); MyClass03 c = new MyClass03()) {
+	public static void main1(String[] args) {
+		try (MyClass01 a = new MyClass01(); 
+				MyClass02 b = new MyClass02(); 
+				MyClass03 c = new MyClass03()) {
+		}
 	}
-    }
 
-    public static void main2(String[] args) {
-	try (MyClass03 c = new MyClass03(); MyClass01 a = new MyClass01();) {
-	    throw new IllegalArgumentException();
+	public static void main(String[] args) {
+		try (MyClass03 c = new MyClass03(); 
+				MyClass01 a = new MyClass01();) {
+			throw new IllegalArgumentException();
+		}
 	}
-    }
 
 }
 
 class MyClass01 implements AutoCloseable {
 
-    @Override
-    public void close() throws NullPointerException {
-	System.out.println("Closing A");
-    }
+	@Override
+	public void close() throws NullPointerException {
+		System.out.println("Closing A");
+	}
 }
 
 class MyClass02 implements AutoCloseable {
 
-    @Override
-    public void close() throws NullPointerException {
-	System.out.println("Closing B");
-    }
+	@Override
+	public void close() throws NullPointerException {
+		System.out.println("Closing B");
+		throw new NullPointerException();
+	}
 }
 
-class MyClass03 implements AutoCloseable {
+class MyClass03 extends MyClass02 {
 
-    @Override
-    public void close() throws NullPointerException {
-	throw new NullPointerException();
-    }
+//	@Override
+//	public void close() {
+//		System.out.println("Closing C");
+//	}
 }
