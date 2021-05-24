@@ -1,0 +1,5 @@
+1. Filter a collection based on criteria, and collect in a list
+2. Get explicit collection implementation (Collectors.toCollection(ArrayList::new)) -> Useful for Dequeue
+   PS -  Constructor method reference
+3. Stream through lines after reading from File -> Files.lines(Path)
+4. 
