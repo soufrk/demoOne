@@ -12,10 +12,10 @@ import java.time.LocalTime;
 public class LocalDateTime01 {
 
     public static void main(String[] args) {
-	// Get System Date
-	System.out.println(LocalDate.now());
-	// Get System Time
-	System.out.println(LocalTime.now());
+        // Get System Date
+        System.out.println(LocalDate.now());
+        // Get System Time
+        System.out.println(LocalTime.now());
     }
 
 }

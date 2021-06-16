@@ -12,12 +12,11 @@ import java.time.LocalTime;
  */
 public class LocalDateTime02 {
 
-
     public static void main(String[] args) {
-	String inputDate = "1990-04-21";
-	System.out.println(LocalDate.parse(inputDate));
-	String inputTime = "19:05:06";
-	System.out.println(LocalTime.parse(inputTime));
+        String inputDate = "1990-04-21";
+        System.out.println(LocalDate.parse(inputDate));
+        String inputTime = "19:05:06";
+        System.out.println(LocalTime.parse(inputTime));
     }
 
 }
